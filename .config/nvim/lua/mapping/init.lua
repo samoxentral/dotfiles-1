@@ -1,0 +1,8 @@
+require 'mapping.comments'
+require 'mapping.dap'
+require 'mapping.default'
+require 'mapping.fugitive'
+require 'mapping.lsp'
+require 'mapping.nvimtree'
+require 'mapping.nvterm'
+require 'mapping.telescope'
