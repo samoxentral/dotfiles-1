@@ -51,6 +51,8 @@ require 'nvim-tree'.setup {
       list = {
         { key = "h", action = 'leftAction', action_cb = function() moveAction(true) end },
         { key = "l", action = 'rightAction', action_cb = function() moveAction(false) end },
+        { key = "s", action = "split" },
+        { key = "v", action = "vsplit" },
       },
     },
   },
