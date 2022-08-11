@@ -1,8 +1,5 @@
 local fn = vim.fn
 
-local sep_l = ""
-local sep_r = " "
-
 local modes = {
   ["n"] = { "NORMAL", "St_NormalMode" },
   ["niI"] = { "NORMAL i", "St_NormalMode" },
@@ -36,27 +33,8 @@ local M = {}
 M.mode = function()
   local m = vim.api.nvim_get_mode().mode
   local current_mode = "%#" .. modes[m][2] .. "#" .. "  " .. modes[m][1]
-  local mode_sep1 = "%#" .. modes[m][2] .. "Sep" .. "#" .. sep_r
 
-  return current_mode .. mode_sep1 .. "%#ST_EmptySpace#" .. sep_r
-end
-
-M.fileInfo = function()
-  local icon = "  "
-  local filename = (fn.expand "%" == "" and "Empty ") or fn.expand "%:t"
-
-  if filename ~= "Empty " then
-    local devicons_present, devicons = pcall(require, "nvim-web-devicons")
-
-    if devicons_present then
-      local ft_icon = devicons.get_icon(filename)
-      icon = (ft_icon ~= nil and " " .. ft_icon) or ""
-    end
-
-    filename = " " .. filename .. " "
-  end
-
-  return "%#St_file_info#" .. icon .. filename .. "%#St_file_sep#" .. sep_r
+  return current_mode .. ' ' .. "%#ST_EmptySpace#"
 end
 
 M.git = function()
@@ -69,7 +47,7 @@ M.git = function()
   local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
   local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
   local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
-  local branch_name = "   " .. git_status.head .. " "
+  local branch_name = "  " .. git_status.head
 
   return "%#St_gitIcons#" .. branch_name .. added .. changed .. removed
 end
@@ -116,16 +94,29 @@ M.LSP_status = function()
 end
 
 M.pwd = function()
-  local dir_icon = "%#St_cwd_icon#" .. " "
-  local dir_name = "%#St_cwd_text#" .. " " .. fn.fnamemodify(fn.expand("%"), ":~:.") .. " "
-  return (vim.o.columns > 120 and ("%#St_cwd_sep#" .. sep_l .. dir_icon .. dir_name)) or ""
+  local dir_name = fn.fnamemodify(fn.expand("%"), ":~:.")
+  return "%#St_cwd_text#" .. " " .. dir_name:gsub('/', ' / ')
+end
+
+local api = vim.api
+local function getNvimTreeWidth()
+  for _, win in pairs(api.nvim_tabpage_list_wins(0)) do
+    if vim.bo[api.nvim_win_get_buf(win)].ft == "NvimTree" then
+      return api.nvim_win_get_width(win) - 9
+    end
+  end
+  return 0
+end
+
+M.CoverNvimTree = function()
+  return "%#NvimTreeNormal#" .. string.rep(" ", getNvimTreeWidth())
 end
 
 M.run = function()
   return table.concat {
     M.mode(),
-    M.fileInfo(),
-    M.git(),
+    M.CoverNvimTree(),
+    M.pwd(),
 
     "%=",
     M.LSP_progress(),
@@ -133,7 +124,7 @@ M.run = function()
 
     M.LSP_Diagnostics(),
     M.LSP_status() or "",
-    M.pwd(),
+    M.git(),
   }
 end
 
