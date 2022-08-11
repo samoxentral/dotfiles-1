@@ -32,7 +32,7 @@ require 'nvim-treesitter.highlight'.set_custom_captures {
   ['attribute_parameter'] = 'AttributeParameter',
 }
 
-local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/lua/filetypes/php.scm', 'rb'))
+local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/queries/php.scm', 'rb'))
 local content = f:read("*all")
 f:close()
 require('vim.treesitter.query').set_query('php', 'highlights', content)

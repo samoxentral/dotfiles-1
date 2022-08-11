@@ -55,7 +55,7 @@ vim.cmd [[
 ]]
 
 vim.cmd [[
-  set cursorline
+  set cursorline!
 ]]
 
 -- set shada path
