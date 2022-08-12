@@ -113,8 +113,8 @@ M.CoverNvimTree = function()
 end
 
 M.DapStatus = function()
-
-  return (require('dap').session() ~= nil and "%#St_DapStatus#" .. "   DAP ~ " .. 'debug' .. " ")  or ''
+  local session = require('dap').session()
+  return (session ~= nil and "%#St_DapStatus#" .. "   DAP ~ " .. session.config.name .. " ") or ''
 end
 
 M.run = function()
