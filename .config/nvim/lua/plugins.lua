@@ -10,7 +10,6 @@ return require('packer').startup(function()
   use 'goolord/alpha-nvim'
   use 'windwp/nvim-autopairs'
   use 'norcalli/nvim-colorizer.lua'
-  use 'norcalli/nvim-base16.lua'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'
 

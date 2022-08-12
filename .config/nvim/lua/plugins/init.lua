@@ -1,6 +1,5 @@
 require 'plugins.alpha'
 require 'plugins.autopairs'
-require 'plugins.base16'
 require 'plugins.colorizer'
 require 'plugins.comment'
 require 'plugins.devicons'

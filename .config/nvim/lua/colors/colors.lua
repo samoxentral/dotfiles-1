@@ -52,11 +52,4 @@ M.colors = {
   folder_bg = "#61afef",
 }
 
-M.theme = {}
-
-for k, v in pairs(M.base16) do
-  M.theme[k] = string.sub(v, 2, -1)
-end
-
-
 return M
