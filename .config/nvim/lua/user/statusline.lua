@@ -112,6 +112,11 @@ M.CoverNvimTree = function()
   return "%#NvimTreeNormal#" .. string.rep(" ", getNvimTreeWidth())
 end
 
+M.DapStatus = function()
+
+  return (require('dap').session() ~= nil and "%#St_DapStatus#" .. "   DAP ~ " .. 'debug' .. " ")  or ''
+end
+
 M.run = function()
   return table.concat {
     M.mode(),
@@ -124,6 +129,7 @@ M.run = function()
 
     M.LSP_Diagnostics(),
     M.LSP_status() or "",
+    M.DapStatus(),
     M.git(),
   }
 end
