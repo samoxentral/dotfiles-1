@@ -71,7 +71,6 @@ local function add_fileInfo(name, bufnr)
           or new_hl(icon_hl, "TbLineBufOff") .. " " .. icon
       )
 
-  name = (#name > 15 and string.sub(name, 1, 13) .. "..") or name
   name = (api.nvim_get_current_buf() == bufnr and "%#TbLineBufOn# " .. name .. " ")
       or ("%#TbLineBufOff# " .. name .. " ")
 
