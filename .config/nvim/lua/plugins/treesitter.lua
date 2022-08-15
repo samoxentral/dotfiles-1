@@ -10,7 +10,7 @@ require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "tsx",
     "php",
-    -- "phpdoc",
+    "phpdoc",
     "json",
     "yaml",
     "html",
@@ -36,3 +36,8 @@ local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/queries/php.scm', '
 local content = f:read("*all")
 f:close()
 require('vim.treesitter.query').set_query('php', 'highlights', content)
+
+local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/queries/phpdoc.scm', 'rb'))
+content = f:read("*all")
+f:close()
+require('vim.treesitter.query').set_query('phpdoc', 'highlights', content)
