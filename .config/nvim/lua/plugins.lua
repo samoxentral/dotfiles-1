@@ -22,6 +22,7 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
+  use 'nvim-telescope/telescope-dap.nvim'
 
   -- lsp
   use 'williamboman/nvim-lsp-installer'

@@ -48,5 +48,5 @@ require 'telescope'.setup({
     },
   },
 
-  extensions_list = { "themes", "terms" },
+  extensions_list = { "dap" },
 })
