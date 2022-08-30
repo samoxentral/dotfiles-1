@@ -42,7 +42,19 @@ nvim_lsp.gopls.setup {
 
 nvim_lsp.intelephense.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  settings = {
+    intelephense = {
+      environment = {
+        phpVersion = '7.2',
+      },
+      files = {
+        exclude = {
+          "**/var/cache/**"
+        }
+      }
+    }
+  }
 }
 
 nvim_lsp.yamlls.setup {
