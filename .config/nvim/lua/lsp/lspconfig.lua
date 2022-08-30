@@ -17,13 +17,13 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 nvim_lsp.gopls.setup {
@@ -37,7 +37,7 @@ nvim_lsp.gopls.setup {
       staticcheck = true,
     },
   },
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 nvim_lsp.intelephense.setup {
@@ -50,16 +50,16 @@ nvim_lsp.intelephense.setup {
       },
       files = {
         exclude = {
-          "**/var/cache/**"
-        }
-      }
-    }
-  }
+          '**/var/cache/**',
+        },
+      },
+    },
+  },
 }
 
 nvim_lsp.yamlls.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 nvim_lsp.sumneko_lua.setup {
@@ -68,12 +68,12 @@ nvim_lsp.sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { "vim" },
+        globals = { 'vim' },
       },
       workspace = {
         library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+          [vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
         },
         maxPreload = 100000,
         preloadFileSize = 10000,
