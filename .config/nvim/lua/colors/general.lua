@@ -11,7 +11,7 @@ set_hl(0, 'PmenuThumb', { bg = colors.grey })
 
 set_hl(0, 'MatchParen', { link = "MatchWord" })
 
-set_hl(0, 'Comment', { fg = colors.grey_fg })
+set_hl(0, 'Comment', { fg = colors.grey_fg, italic = true })
 
 set_hl(0, 'CursorLineNr', { fg = colors.white })
 set_hl(0, 'LineNr', { fg = colors.grey })
