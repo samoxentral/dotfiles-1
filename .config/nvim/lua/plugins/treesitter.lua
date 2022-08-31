@@ -30,6 +30,8 @@ require 'nvim-treesitter.highlight'.set_custom_captures {
   ['interface_declaration'] = 'InterfaceDeclaration',
   ['function_call'] = 'FunctionCall',
   ['attribute_parameter'] = 'AttributeParameter',
+
+  ['json_scalar'] = 'JsonScalar',
 }
 
 local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/queries/php.scm', 'rb'))
