@@ -1,5 +1,4 @@
 local set_hl = vim.api.nvim_set_hl
-local base16 = require 'colors.colors'.base16
 local colors = require 'colors.colors'.colors
 
 local kek2 = { fg = colors.cyan, bg = colors.cyan }

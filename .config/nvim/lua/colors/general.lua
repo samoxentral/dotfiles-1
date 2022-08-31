@@ -6,7 +6,7 @@ set_hl(0, 'MatchWord', { bg = colors.grey, fg = colors.white })
 
 set_hl(0, 'Pmenu', { bg = colors.one_bg })
 set_hl(0, 'PmenuSbar', { bg = colors.one_bg })
-set_hl(0, 'PmenuSel', { bg = colors.pmenu_bg, fg = colors.black })
+set_hl(0, 'PmenuSel', { bg = colors.blue, fg = colors.black })
 set_hl(0, 'PmenuThumb', { bg = colors.grey })
 
 set_hl(0, 'MatchParen', { link = "MatchWord" })
