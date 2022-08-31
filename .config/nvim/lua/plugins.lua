@@ -20,6 +20,7 @@ return require('packer').startup(function()
   use 'nvim-treesitter/playground'
 
   use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-telescope/telescope-dap.nvim'

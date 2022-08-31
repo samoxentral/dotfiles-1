@@ -1,3 +1,5 @@
+local fb_actions = require "telescope".extensions.file_browser.actions
+
 require 'telescope'.setup({
   defaults = {
     vimgrep_arguments = {
@@ -49,4 +51,22 @@ require 'telescope'.setup({
   },
 
   extensions_list = { "dap" },
+  extensions = {
+    file_browser = {
+      theme = "dropdown",
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          ["<C-w>"] = function() vim.cmd('normal vbd') end,
+        },
+        ["n"] = {
+          ["N"] = fb_actions.create,
+          ["h"] = fb_actions.goto_parent_dir,
+          ["/"] = function()
+            vim.cmd('startinsert')
+          end
+        },
+      },
+    },
+  },
 })
