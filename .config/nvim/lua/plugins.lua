@@ -26,8 +26,10 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope-dap.nvim'
 
   -- lsp
-  use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
+
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
   -- lsp completion
   use 'rafamadriz/friendly-snippets'
