@@ -5,7 +5,7 @@ return require('packer').startup(function()
 
   -- git
   use 'lewis6991/gitsigns.nvim'
-  use 'tpope/vim-fugitive'
+  use 'dinhhuy258/git.nvim'
 
   use 'goolord/alpha-nvim'
   use 'windwp/nvim-autopairs'
