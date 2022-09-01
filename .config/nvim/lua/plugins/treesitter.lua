@@ -8,6 +8,7 @@ require 'nvim-treesitter.configs'.setup {
     disalbe = {},
   },
   ensure_installed = {
+    "bash",
     "tsx",
     "php",
     "phpdoc",
