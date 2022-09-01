@@ -47,7 +47,7 @@ M.git = function()
   local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
   local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
   local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
-  local branch_name = "  " .. git_status.head
+  local branch_name = "   " .. git_status.head
 
   return "%#St_gitIcons#" .. branch_name .. added .. changed .. removed
 end
@@ -117,6 +117,12 @@ M.DapStatus = function()
   return (session ~= nil and "%#St_DapStatus#" .. "   DAP ~ " .. session.config.name .. " ") or ''
 end
 
+M.cwd = function()
+  local dir_icon =  "  "
+  local dir_name = fn.fnamemodify(fn.getcwd(), ":t")
+  return (vim.o.columns > 85 and ("%#St_gitIcons#" .. dir_icon .. dir_name)) or ""
+end
+
 M.run = function()
   return table.concat {
     M.mode(),
@@ -131,6 +137,7 @@ M.run = function()
     M.LSP_status() or "",
     M.DapStatus(),
     M.git(),
+    M.cwd(),
   }
 end
 
