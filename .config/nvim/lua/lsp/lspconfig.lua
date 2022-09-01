@@ -79,3 +79,8 @@ nvim_lsp.sumneko_lua.setup {
     },
   },
 }
+
+nvim_lsp.dockerls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
