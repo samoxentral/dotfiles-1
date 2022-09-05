@@ -27,13 +27,13 @@ map('n', '<leader>dd', dap.list_breakpoints)
 
 map('n', '<leader>sf', function()
   file_browser.file_browser({
-    path = "%:p:h",
+    path = '%:p:h',
     cwd = telescope_buffer_dir(),
     respect_gitignore = false,
     hidden = true,
     grouped = true,
     previewer = false,
-    initial_mode = "normal",
+    initial_mode = 'normal',
     layout_config = { height = 40 }
   })
 end)

@@ -12,14 +12,14 @@ end
 function libs.check_lsp_active()
   local active_clients = vim.lsp.get_active_clients()
   if next(active_clients) == nil then
-    return false, "[lspsaga] No lsp client available"
+    return false, '[lspsaga] No lsp client available'
   end
   return true, nil
 end
 
 function libs.result_isempty(res)
-  if type(res) ~= "table" then
-    print "[Lspsaga] Server return wrong response"
+  if type(res) ~= 'table' then
+    print '[Lspsaga] Server return wrong response'
     return
   end
   for _, v in pairs(res) do
@@ -37,10 +37,10 @@ function libs.result_isempty(res)
 end
 
 function libs.split_by_pathsep(text, start_pos)
-  local pattern = "//"
-  local short_text = ""
+  local pattern = '//'
+  local short_text = ''
   local split_table = {}
-  for word in text:gmatch("[^" .. pattern .. "]+") do
+  for word in text:gmatch('[^' .. pattern .. ']+') do
     table.insert(split_table, word)
   end
 
@@ -62,18 +62,18 @@ function libs.get_lsp_root_dir()
   local clients = vim.lsp.get_active_clients()
   for _, client in pairs(clients) do
     if client.config.filetypes and client.config.root_dir then
-      if type(client.config.filetypes) == "table" then
+      if type(client.config.filetypes) == 'table' then
         if libs.has_value(client.config.filetypes, vim.bo.filetype) then
           return client.config.root_dir
         end
-      elseif type(client.config.filetypes) == "string" then
+      elseif type(client.config.filetypes) == 'string' then
         if client.config.filetypes == vim.bo.filetype then
           return client.config.root_dir
         end
       end
     end
   end
-  return ""
+  return ''
 end
 
 return libs

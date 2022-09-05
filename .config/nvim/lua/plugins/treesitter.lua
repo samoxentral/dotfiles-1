@@ -8,21 +8,21 @@ require 'nvim-treesitter.configs'.setup {
     disalbe = {},
   },
   ensure_installed = {
-    "bash",
-    "tsx",
-    "php",
-    "phpdoc",
-    "json",
-    "yaml",
-    "html",
-    "scss",
-    "go",
-    "dockerfile",
-    "vim",
-    "lua",
-    "markdown",
-    "make",
-    "query",
+    'bash',
+    'tsx',
+    'php',
+    'phpdoc',
+    'json',
+    'yaml',
+    'html',
+    'scss',
+    'go',
+    'dockerfile',
+    'vim',
+    'lua',
+    'markdown',
+    'make',
+    'query',
   }
 }
 
@@ -36,11 +36,11 @@ require 'nvim-treesitter.highlight'.set_custom_captures {
 }
 
 local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/queries/php.scm', 'rb'))
-local content = f:read("*all")
+local content = f:read('*all')
 f:close()
 require('vim.treesitter.query').set_query('php', 'highlights', content)
 
 local f = assert(io.open(os.getenv('HOME') .. '/.config/nvim/queries/phpdoc.scm', 'rb'))
-content = f:read("*all")
+content = f:read('*all')
 f:close()
 require('vim.treesitter.query').set_query('phpdoc', 'highlights', content)

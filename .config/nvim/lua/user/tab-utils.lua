@@ -2,14 +2,14 @@ local M = {}
 local api = vim.api
 
 M.close_buffer = function(bufnr)
-  if vim.bo.buftype == "terminal" then
-    vim.cmd(vim.bo.buflisted and "set nobl | enew" or "hide")
+  if vim.bo.buftype == 'terminal' then
+    vim.cmd(vim.bo.buflisted and 'set nobl | enew' or 'hide')
   elseif vim.bo.modified then
-    print "save the file bruh"
+    print 'save the file bruh'
   else
     bufnr = bufnr or api.nvim_get_current_buf()
-    require("user.tab-utils").tabuflinePrev()
-    vim.cmd("bd" .. bufnr)
+    require('user.tab-utils').tabuflinePrev()
+    vim.cmd('bd' .. bufnr)
   end
 end
 
@@ -30,7 +30,7 @@ M.tabuflineNext = function()
 
   for i, v in ipairs(bufs) do
     if api.nvim_get_current_buf() == v then
-      vim.cmd(i == #bufs and "b" .. bufs[1] or "b" .. bufs[i + 1])
+      vim.cmd(i == #bufs and 'b' .. bufs[1] or 'b' .. bufs[i + 1])
       break
     end
   end
@@ -41,7 +41,7 @@ M.tabuflinePrev = function()
 
   for i, v in ipairs(bufs) do
     if api.nvim_get_current_buf() == v then
-      vim.cmd(i == 1 and "b" .. bufs[#bufs] or "b" .. bufs[i - 1])
+      vim.cmd(i == 1 and 'b' .. bufs[#bufs] or 'b' .. bufs[i - 1])
       break
     end
   end
@@ -51,16 +51,16 @@ end
 M.closeAllBufs = function(action)
   local bufs = vim.t.bufs
 
-  if action == "closeTab" then
-    vim.cmd "tabclose"
+  if action == 'closeTab' then
+    vim.cmd 'tabclose'
   end
 
   for _, buf in ipairs(bufs) do
     M.close_buffer(buf)
   end
 
-  if action ~= "closeTab" then
-    vim.cmd "enew"
+  if action ~= 'closeTab' then
+    vim.cmd 'enew'
   end
 end
 

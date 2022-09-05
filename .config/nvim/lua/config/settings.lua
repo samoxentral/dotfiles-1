@@ -17,7 +17,7 @@ opt.tabline = "%!v:lua.require('user.tabline').run()"
 
 opt.showmode = false
 opt.title = true
-opt.clipboard = "unnamedplus"
+opt.clipboard = 'unnamedplus'
 opt.cul = true -- cursor line
 
 -- Indenting
@@ -25,7 +25,7 @@ opt.expandtab = true
 opt.shiftwidth = 2
 opt.smartindent = true
 
-opt.fillchars = { eob = " " }
+opt.fillchars = { eob = ' ' }
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -35,9 +35,9 @@ opt.numberwidth = 2
 opt.ruler = false
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append 'sI'
 
-opt.signcolumn = "yes"
+opt.signcolumn = 'yes'
 opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 8
@@ -48,7 +48,7 @@ opt.undofile = true
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
 
-g.mapleader = " "
+g.mapleader = ' '
 
 vim.cmd [[
   iabbrev retrun return
@@ -60,6 +60,6 @@ vim.cmd [[
 
 -- set shada path
 vim.schedule(function()
-  vim.opt.shadafile = vim.fn.expand "$HOME" .. "/.local/share/nvim/shada/main.shada"
+  vim.opt.shadafile = vim.fn.expand '$HOME' .. '/.local/share/nvim/shada/main.shada'
   vim.cmd [[ silent! rsh ]]
 end)

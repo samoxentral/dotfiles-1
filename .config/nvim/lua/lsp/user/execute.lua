@@ -8,7 +8,7 @@ local send_request = function(method)
   params.context = { includeDeclaration = true }
   local response = vim.lsp.buf_request_sync(0, method, params, 1000)
 
-  if type(response) == "table" then
+  if type(response) == 'table' then
     for _, res in pairs(response) do
       if res.result then
         coroutine.yield(res.result)
@@ -25,7 +25,7 @@ function Finder:lsp_finder_request(method)
   return uv.new_async(vim.schedule_wrap(function()
     local root_dir = libs.get_lsp_root_dir()
     if string.len(root_dir) == 0 then
-      print "[LspSaga] get root dir failed"
+      print '[LspSaga] get root dir failed'
       return
     end
     self.WIN_WIDTH = vim.fn.winwidth(0)
@@ -36,7 +36,7 @@ function Finder:lsp_finder_request(method)
 
     -- local request_intance = coroutine.create(send_request)
     local request_intance = coroutine.create(function() send_request(method) end)
-    self.buf_filetype = vim.api.nvim_buf_get_option(0, "filetype")
+    self.buf_filetype = vim.api.nvim_buf_get_option(0, 'filetype')
 
     local has_result = false
     while true do
@@ -62,9 +62,9 @@ end
 function Finder:create_finder_contents(result, root_dir)
   local home_dir = os.getenv 'HOME'
   local target_lnum = 1
-  if type(result) == "table" then
+  if type(result) == 'table' then
 
-    local params = vim.fn.expand "<cword>"
+    local params = vim.fn.expand '<cword>'
     self.param_length = #params
 
     self.uri = result.saga_msg and 1 or #result
@@ -99,7 +99,7 @@ function Finder:create_finder_contents(result, root_dir)
       end
 
       local range = result[index].targetSelectionRange or result[index].targetRange or result[index].range
-      local target_line = "[" .. index .. "]" .. " " .. short_name .. ' :' .. range.start.line + 1
+      local target_line = '[' .. index .. ']' .. ' ' .. short_name .. ' :' .. range.start.line + 1
       table.insert(self.contents, target_line)
 
       local lines = vim.api.nvim_buf_get_lines(
@@ -133,8 +133,8 @@ function Finder:render_finder_result()
   end
 
   -- get dimensions
-  local width = vim.api.nvim_get_option "columns"
-  local height = vim.api.nvim_get_option "lines"
+  local width = vim.api.nvim_get_option 'columns'
+  local height = vim.api.nvim_get_option 'lines'
 
   -- calculate our floating window size
   local win_height = math.ceil(height * 0.8)
@@ -144,8 +144,8 @@ function Finder:render_finder_result()
   local row = math.ceil((height - win_height) * 0.7)
   local col = math.ceil((width - win_width))
   local opts = {
-    style = "minimal",
-    relative = "editor",
+    style = 'minimal',
+    relative = 'editor',
     row = row,
     col = col,
   }
@@ -161,25 +161,25 @@ function Finder:render_finder_result()
 
   local content_opts = {
     contents = self.contents,
-    filetype = "LspsagaFinder",
+    filetype = 'LspsagaFinder',
     enter = true,
-    highlight = "LspSagaLspFinderBorder",
+    highlight = 'LspSagaLspFinderBorder',
   }
 
   self.bufnr, self.winid = window.create_win_with_border(content_opts, opts)
-  vim.api.nvim_buf_set_option(self.contents_buf or 0, "buflisted", false)
-  vim.api.nvim_win_set_var(self.conents_win or 0, "lsp_finder_win_opts", opts)
-  vim.api.nvim_win_set_option(self.conents_win or 0, "cursorline", true)
+  vim.api.nvim_buf_set_option(self.contents_buf or 0, 'buflisted', false)
+  vim.api.nvim_win_set_var(self.conents_win or 0, 'lsp_finder_win_opts', opts)
+  vim.api.nvim_win_set_option(self.conents_win or 0, 'cursorline', true)
 
   if not self.cursor_line_bg and not self.cursor_line_fg then
     self:get_cursorline_highlight()
   end
   vim.api.nvim_command "highlight! link CursorLine LspSagaFinderSelection"
-  vim.api.nvim_command 'autocmd CursorMoved <buffer> lua require("lsp.user.execute").auto_open_preview()'
+  vim.api.nvim_command "autocmd CursorMoved <buffer> lua require('lsp.user.execute').auto_open_preview()"
   vim.api.nvim_command "autocmd QuitPre <buffer> lua require('lsp.user.execute').close_lsp_finder_window()"
 
   for i = 0, self.uri, 1 do
-    vim.api.nvim_buf_add_highlight(self.contents_buf or 0, -1, "TargetFileName", i, 0, -1)
+    vim.api.nvim_buf_add_highlight(self.contents_buf or 0, -1, 'TargetFileName', i, 0, -1)
   end
 
   self:apply_float_map()
@@ -201,31 +201,31 @@ function Finder:apply_float_map()
 end
 
 function Finder:get_cursorline_highlight()
-  self.cursor_line_bg = vim.fn.synIDattr(vim.fn.hlID "cursorline", "bg")
-  self.cursor_line_fg = vim.fn.synIDattr(vim.fn.hlID "cursorline", "fg")
+  self.cursor_line_bg = vim.fn.synIDattr(vim.fn.hlID 'cursorline', 'bg')
+  self.cursor_line_fg = vim.fn.synIDattr(vim.fn.hlID 'cursorline', 'fg')
 end
 
 function Finder:auto_open_preview()
-  local current_line = vim.fn.line "."
+  local current_line = vim.fn.line '.'
   if not self.short_link[current_line] then
     return
   end
   local content = self.short_link[current_line].preview or {}
 
   if next(content) ~= nil then
-    local has_var, finder_win_opts = pcall(vim.api.nvim_win_get_var, 0, "lsp_finder_win_opts")
+    local has_var, finder_win_opts = pcall(vim.api.nvim_win_get_var, 0, 'lsp_finder_win_opts')
     if not has_var then
-      print "get finder window options wrong"
+      print 'get finder window options wrong'
       return
     end
     local opts = {
-      relative = "editor",
+      relative = 'editor',
       no_size_override = true,
     }
 
     local finder_width = vim.fn.winwidth(0)
     local finder_height = vim.fn.winheight(0)
-    local screen_width = vim.api.nvim_get_option "columns"
+    local screen_width = vim.api.nvim_get_option 'columns'
 
     local content_width = 0
     for _, line in ipairs(content) do
@@ -265,7 +265,7 @@ function Finder:auto_open_preview()
     local content_opts = {
       contents = content,
       filetype = self.buf_filetype,
-      highlight = "LspSagaAutoPreview",
+      highlight = 'LspSagaAutoPreview',
       row = self.short_link[current_line].row,
       col = self.short_link[current_line].col,
     }
@@ -273,14 +273,14 @@ function Finder:auto_open_preview()
     vim.defer_fn(function()
       self:close_auto_preview_win()
       local bufnr, winid = window.create_win_with_border(content_opts, opts)
-      vim.api.nvim_buf_set_option(bufnr, "buflisted", false)
-      vim.api.nvim_win_set_var(0, "saga_finder_preview", { winid, 1, max_preview_lines + 1 })
+      vim.api.nvim_buf_set_option(bufnr, 'buflisted', false)
+      vim.api.nvim_win_set_var(0, 'saga_finder_preview', { winid, 1, max_preview_lines + 1 })
     end, 10)
   end
 end
 
 function Finder:close_auto_preview_win()
-  local has_var, pdata = pcall(vim.api.nvim_win_get_var, 0, "saga_finder_preview")
+  local has_var, pdata = pcall(vim.api.nvim_win_get_var, 0, 'saga_finder_preview')
   if has_var then
     window.nvim_close_valid_window(pdata[1])
   end
@@ -290,11 +290,11 @@ end
 -- action 2 mean vsplit
 -- action 3 mean split
 function Finder:open_link(action_type)
-  local action = { "edit ", "vsplit ", "split " }
-  local current_line = vim.fn.line "."
+  local action = { 'edit ', 'vsplit ', 'split ' }
+  local current_line = vim.fn.line '.'
 
   if self.short_link[current_line] == nil then
-    error "[LspSaga] target file uri not exist"
+    error '[LspSaga] target file uri not exist'
     return
   end
 
@@ -318,7 +318,7 @@ function Finder:clear_tmp_data()
   self.contents = {}
   self.uri = 0
   self.param_length = 0
-  self.buf_filetype = ""
+  self.buf_filetype = ''
   self.WIN_HEIGHT = 0
   self.WIN_WIDTH = 0
   if self.cursor_line_bg ~= '' then
