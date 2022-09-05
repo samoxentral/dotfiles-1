@@ -3,7 +3,7 @@ local colors = require 'colors.colors'.colors
 
 set_hl(0, 'StatusLine', { bg = colors.black })
 set_hl(0, 'St_gitIcons', { fg = colors.light_grey, bg = colors.black, bold = true })
-set_hl(0, 'St_lspError', { fg = colors.red, bg = colors.black})
+set_hl(0, 'St_lspError', { fg = colors.red, bg = colors.black })
 set_hl(0, 'St_lspWarning', { fg = colors.yellow, bg = colors.black })
 set_hl(0, 'St_LspHints', { fg = colors.purple, bg = colors.black })
 set_hl(0, 'St_LspInfo', { fg = colors.green, bg = colors.black })

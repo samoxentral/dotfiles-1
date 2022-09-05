@@ -20,4 +20,3 @@ map('n', '<Leader>duh', require('dap.ui.widgets').hover)
 map('n', '<Leader>duf', function() local widgets = require('dap.ui.widgets'); widgets.centered_float(widgets.scopes) end)
 
 map('n', '<Leader>dro', require('dap').repl.open)
-
