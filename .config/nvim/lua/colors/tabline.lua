@@ -1,9 +1,18 @@
 local set_hl = vim.api.nvim_set_hl
+local base16 = require 'colors.colors'.base16
 local colors = require 'colors.colors'.colors
 
-set_hl(0, 'TblineFill', { bg = colors.black2 })
+set_hl(0, 'TbLineBufOnDefault', { fg = colors.white, bg = colors.black, bold = true })
+set_hl(0, 'TbLineBufOnChanged', { fg = base16.base0C, bg = colors.black, bold = true })
+set_hl(0, 'TbLineBufOnIgnored', { fg = base16.base04, bg = colors.black, bold = true })
+set_hl(0, 'TbLineBufOffDefault', { fg = colors.white, bg = colors.black2 })
+set_hl(0, 'TbLineBufOffChanged', { fg = base16.base0C, bg = colors.black2 })
+set_hl(0, 'TbLineBufOffIgnored', { fg = base16.base04, bg = colors.black2 })
+
 set_hl(0, 'TbLineBufOn', { fg = colors.white, bg = colors.black })
 set_hl(0, 'TbLineBufOff', { fg = colors.light_grey, bg = colors.black2 })
+
+set_hl(0, 'TblineFill', { bg = colors.black2 })
 set_hl(0, 'TbLineBufOnModified', { fg = colors.green, bg = colors.black })
 set_hl(0, 'TbBufLineBufOffModified', { fg = colors.red, bg = colors.black2 })
 set_hl(0, 'TbLineBufOnClose', { fg = colors.red, bg = colors.black })

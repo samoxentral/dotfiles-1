@@ -3,20 +3,6 @@ local devicons = require 'nvim-web-devicons'
 local fn = vim.fn
 local new_cmd = api.nvim_create_user_command
 
----------------------------------------------------------- btn onclick functions ----------------------------------------------
-
-vim.cmd "function! TbGoToBuf(bufnr,b,c,d) \n execute 'b'..a:bufnr \n endfunction"
-
-vim.cmd [[
-   function! TbKillBuf(bufnr,b,c,d) 
-        call luaeval('require('user.tab-utils').close_buffer(_A)', a:bufnr)
-  endfunction]]
-
-vim.cmd "function! TbNewTab(a,b,c,d) \n tabnew \n endfunction"
-vim.cmd "function! TbGotoTab(tabnr,b,c,d) \n execute a:tabnr ..'tabnext' \n endfunction"
-vim.cmd "function! TbTabClose(a,b,c,d) \n lua require('user.tab-utils').closeAllBufs('closeTab') \n endfunction"
-vim.cmd "function! TbCloseAllBufs(a,b,c,d) \n lua require('user.tab-utils').closeAllBufs() \n endfunction"
-
 ---------------------------------------------------------- commands ------------------------------------------------------------
 new_cmd('Tbufnext', function()
   require('user.tab-utils').tabuflineNext()
@@ -56,7 +42,7 @@ local function getBtnsWidth()
   return width
 end
 
-local function add_fileInfo(name, bufnr)
+local function add_fileInfo(name, bufnr, style)
   local icon, icon_hl = devicons.get_icon(name, string.match(name, '%a+$'))
 
   if not icon then
@@ -71,29 +57,53 @@ local function add_fileInfo(name, bufnr)
           or new_hl(icon_hl, 'TbLineBufOff') .. ' ' .. icon
       )
 
-  name = (api.nvim_get_current_buf() == bufnr and '%#TbLineBufOn# ' .. name .. ' ')
-      or ('%#TbLineBufOff# ' .. name .. ' ')
+  name = style .. ' ' .. name .. ' '
 
   return string.rep(' ', pad) .. icon .. name .. string.rep(' ', pad - 1)
 end
 
-local function styleBufferTab(nr)
-  local close_btn = '%' .. nr .. '@TbKillBuf@ %X'
-  local name = (#api.nvim_buf_get_name(nr) ~= 0) and fn.fnamemodify(api.nvim_buf_get_name(nr), ':t') or ' No Name '
-  name = '%' .. nr .. '@TbGoToBuf@' .. add_fileInfo(name, nr) .. '%X'
+local function getBufferGitStatus(bufnr)
+  local handle = io.popen('git ls-files -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
+  local result = handle:read('*a')
+  handle:close()
 
-  -- color close btn for focused / hidden  buffers
-  if nr == api.nvim_get_current_buf() then
-    close_btn = (vim.bo[0].modified and '%' .. nr .. '@TbKillBuf@%#TbLineBufOnModified# ')
-        or ('%#TbLineBufOnClose#' .. close_btn)
-    name = '%#TbLineBufOn#' .. name .. close_btn
-  else
-    close_btn = (vim.bo[nr].modified and '%' .. nr .. '@TbKillBuf@%#TbBufLineBufOffModified# ')
-        or ('%#TbLineBufOffClose#' .. close_btn)
-    name = '%#TbLineBufOff#' .. name .. close_btn
+  if (result == '') then
+    return 'ignored'
   end
 
-  return name
+  -- if api.nvim_buf_is_loaded(bufnr) then
+  -- local has_bstatus, bstatus = pcall(api.nvim_buf_get_var, bufnr, 'gitsigns_status_dict')
+  -- if has_bstatus and type(bstatus) == 'table' then
+  --   if (bstatus.added > 0 or bstatus.changed > 0 or bstatus.remove > 0) then
+  return 'changed'
+  --   end
+  -- end
+  -- end
+
+  -- return 'default'
+end
+
+local styles = {
+  ['default'] = { 'TbLineBufOnDefault', 'TbLineBufOffDefault' },
+  ['changed'] = { 'TbLineBufOnChanged', 'TbLineBufOffChanged' },
+  ['ignored'] = { 'TbLineBufOnIgnored', 'TbLineBufOffIgnored' },
+}
+
+local function styleBufferTab(nr)
+  local open_current = nr == api.nvim_get_current_buf()
+  local style = '%#' .. styles[getBufferGitStatus(nr)][open_current and 1 or 2] .. '#'
+
+  local name = (#api.nvim_buf_get_name(nr) ~= 0) and fn.fnamemodify(api.nvim_buf_get_name(nr), ':t') or ' No Name '
+  name = add_fileInfo(name, nr, style)
+
+  local close_btn = ' '
+  if open_current then
+    close_btn = (vim.bo[0].modified and '%#TbLineBufOnModified# ') or ('%#TbLineBufOnClose#' .. close_btn)
+  else
+    close_btn = (vim.bo[nr].modified and '%#TbBufLineBufOffModified# ') or ('%#TbLineBufOffClose#' .. close_btn)
+  end
+
+  return style .. name .. close_btn
 end
 
 ---------------------------------------------------------- components ------------------------------------------------------------
@@ -135,7 +145,7 @@ M.tablist = function()
   if number_of_tabs > 1 then
     for i = 1, number_of_tabs, 1 do
       local tab_hl = ((i == fn.tabpagenr()) and '%#TbLineTabOn# ') or '%#TbLineTabOff# '
-      result = result .. ('%' .. i .. '@TbGotoTab@' .. tab_hl .. i .. ' ')
+      result = result .. tab_hl .. i .. ' '
       result = (i == fn.tabpagenr() and result) or result
     end
 
