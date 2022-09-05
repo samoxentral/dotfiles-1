@@ -9,15 +9,19 @@ return require('packer').startup(function()
 
   use 'goolord/alpha-nvim'
   use 'windwp/nvim-autopairs'
+  use 'tpope/vim-surround'
   use 'norcalli/nvim-colorizer.lua'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'
+  use 'rmagatti/auto-session'
+  use 'karb94/neoscroll.nvim'
 
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/playground'
+  use 'mtdl9/vim-log-highlighting'
 
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
