@@ -75,12 +75,12 @@ local function getBufferGitStatus(bufnr)
   -- local has_bstatus, bstatus = pcall(api.nvim_buf_get_var, bufnr, 'gitsigns_status_dict')
   -- if has_bstatus and type(bstatus) == 'table' then
   --   if (bstatus.added > 0 or bstatus.changed > 0 or bstatus.remove > 0) then
-  return 'changed'
+  -- return 'changed'
   --   end
   -- end
   -- end
 
-  -- return 'default'
+  return 'default'
 end
 
 local styles = {
