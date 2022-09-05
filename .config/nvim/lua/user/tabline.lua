@@ -71,16 +71,15 @@ local function getBufferGitStatus(bufnr)
     return 'ignored'
   end
 
-  -- if api.nvim_buf_is_loaded(bufnr) then
-  -- local has_bstatus, bstatus = pcall(api.nvim_buf_get_var, bufnr, 'gitsigns_status_dict')
-  -- if has_bstatus and type(bstatus) == 'table' then
-  --   if (bstatus.added > 0 or bstatus.changed > 0 or bstatus.remove > 0) then
-  -- return 'changed'
-  --   end
-  -- end
-  -- end
+  handle = io.popen('git status -s -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
+  result = handle:read('*a')
+  handle:close()
 
-  return 'default'
+  if (result == '') then
+    return 'default'
+  end
+
+  return 'changed'
 end
 
 local styles = {
