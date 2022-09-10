@@ -1,8 +1,5 @@
-; Variables
-
-(variable_name) @variable
-
-; Types
+; ((name) @constant
+ ; (#vim-match? @constant "^[A-Z][A-Z\d_]*$"))
 
 [
  (primitive_type)
@@ -164,14 +161,6 @@
  "unset"
  "self"
  "parent"
- ] @keyword
-
-[
-  "return"
-  "yield"
-] @keyword.return
-
-[
  "case"
  "else"
  "elseif"
@@ -180,8 +169,13 @@
  "if"
  "switch"
  "match"
-  "??"
- ] @conditional
+ ] @keyword
+
+[
+  "return"
+  "yield"
+] @keyword.return
+
 
 [
  "continue"
@@ -215,11 +209,14 @@
  ] @punctuation.delimiter
 
 [
- "?>"
- "("
- ")"
- "{"
- "}"
+  "?>"
+  "("
+  ")"
+  "{"
+  "}"
+  "?"
+  ":"
+  "??"
  ] @punctuation.bracket
 
 [
@@ -280,10 +277,6 @@
 ] @operator
 
 [
-  "?"
-] @type
-
-[
   "]"
   "["
 ] @punctuation.bracket
@@ -306,6 +299,9 @@
   (name) @type)
 
 (scoped_call_expression
+  scope: (name) @class_declaration)
+
+(scoped_property_access_expression 
   scope: (name) @class_declaration)
 
 (class_constant_access_expression

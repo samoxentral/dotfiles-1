@@ -63,31 +63,32 @@ local function add_fileInfo(name, bufnr, style)
 end
 
 local function getBufferGitStatus(bufnr)
-  local handle = io.popen('git status -s -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
-  local result = handle:read('*a')
-  handle:close()
-
-  if (result ~= '') then
-    return 'changed'
-  end
-
-  handle = io.popen('git ls-files -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
-  result = handle:read('*a')
-  handle:close()
-
-  if (result == '') then
-    return 'ignored'
-  end
-
-  handle = io.popen('git status -s -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
-  result = handle:read('*a')
-  handle:close()
-
-  if (result == '') then
-    return 'default'
-  end
-
-  return 'changed'
+  return 'default'
+  -- local handle = io.popen('git status -s -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
+  -- local result = handle:read('*a')
+  -- handle:close()
+  --
+  -- if (result ~= '') then
+  --   return 'changed'
+  -- end
+  --
+  -- handle = io.popen('git ls-files -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
+  -- result = handle:read('*a')
+  -- handle:close()
+  --
+  -- if (result == '') then
+  --   return 'ignored'
+  -- end
+  --
+  -- handle = io.popen('git status -s -- ' .. fn.fnamemodify(api.nvim_buf_get_name(bufnr), '%'))
+  -- result = handle:read('*a')
+  -- handle:close()
+  --
+  -- if (result == '') then
+  --   return 'default'
+  -- end
+  --
+  -- return 'changed'
 end
 
 local styles = {
