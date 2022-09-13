@@ -5,5 +5,6 @@ vim.cmd [[
   autocmd FileType php iabbrev <buffer> getter public function getVar(): Type<CR>{<CR>return $this->var;
   autocmd FileType php iabbrev <buffer> setter public function setVar(Type $var): self<CR>{<CR>$this->var = $var;<CR>return $this;
 
-  autocmd BufNewFile,BufRead *.lock set syntax=json
+  autocmd BufNewFile,BufRead *.lock setlocal filetype=json
+  " autocmd BufNewFile,BufRead *.twig setlocal filetype=html not working((
 ]]
