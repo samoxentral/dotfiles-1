@@ -1,7 +1,8 @@
-require('null-ls').setup({
+local null_ls = require 'null-ls'
+
+null_ls.setup({
   sources = {
-    require('null-ls').builtins.formatting.xmllint,
-    require('null-ls').builtins.formatting.deno_fmt,
-    require('null-ls').builtins.formatting.prettier,
+    null_ls.builtins.formatting.xmllint,
+    null_ls.builtins.formatting.prettier,
   },
 })

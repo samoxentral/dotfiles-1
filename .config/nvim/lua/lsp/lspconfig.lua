@@ -13,31 +13,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
-  capabilities = capabilities,
-}
-
-nvim_lsp.gopls.setup {
-  on_attach = on_attach,
-  cmd = { 'gopls', 'serve' },
-  filetypes = { 'go', 'gomod' },
-  root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
-  settings = {
-    gopls = {
-      analyses = { unusedparams = true },
-      staticcheck = true,
-    },
-  },
-  capabilities = capabilities,
-}
-
+-- PHP
 nvim_lsp.intelephense.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -55,11 +31,35 @@ nvim_lsp.intelephense.setup {
   },
 }
 
+-- typescsipt
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+  capabilities = capabilities,
+}
+
+-- go
+nvim_lsp.gopls.setup {
+  on_attach = on_attach,
+  cmd = { 'gopls', 'serve' },
+  filetypes = { 'go', 'gomod' },
+  root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
+  settings = {
+    gopls = {
+      analyses = { unusedparams = true },
+      staticcheck = true,
+    },
+  },
+  capabilities = capabilities,
+}
+
+-- yaml
 nvim_lsp.yamlls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
+-- lua
 nvim_lsp.sumneko_lua.setup {
   on_attagch = on_attach,
   capabilities = capabilities,
@@ -80,6 +80,7 @@ nvim_lsp.sumneko_lua.setup {
   },
 }
 
+-- dockerfile
 nvim_lsp.dockerls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
