@@ -16,6 +16,7 @@ set_hl(0, 'NvimTreeWinSeparator', { fg = colors.darker_black, bg = colors.darker
 set_hl(0, 'NvimTreeWindowPicker', { fg = colors.red, bg = colors.black2 })
 set_hl(0, 'NvimTreeCursorLine', { bg = colors.black2 })
 set_hl(0, 'NvimTreeSpecialFile', { fg = colors.white })
+set_hl(0, 'NvimTreeExecFile', { fg = colors.white })
 set_hl(0, 'NvimTreeRootFolder', { fg = colors.red })
 
 set_hl(0, 'NvimTreeGitDirty', { fg = base16.base0C })

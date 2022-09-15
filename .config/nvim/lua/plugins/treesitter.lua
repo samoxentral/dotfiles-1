@@ -23,6 +23,7 @@ require 'nvim-treesitter.configs'.setup {
     'markdown',
     'make',
     'query',
+    'sql',
   }
 }
 
