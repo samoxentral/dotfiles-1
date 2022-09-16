@@ -5,7 +5,6 @@ return require('packer').startup(function()
 
   -- git
   use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim'
   use 'sindrets/diffview.nvim'
 
   -- other
