@@ -1,23 +1,23 @@
-local utils = require "git.utils"
+local utils = require 'user.git.utils'
 
 local M = {}
 
 local win, buf
 
 local function create_cmd_win()
-  vim.api.nvim_command "new"
+  vim.api.nvim_command 'new'
   win = vim.api.nvim_get_current_win()
   buf = vim.api.nvim_get_current_buf()
 
-  vim.api.nvim_buf_set_option(buf, "buftype", "")
-  vim.api.nvim_buf_set_option(buf, "bufhidden", "hide")
-  vim.api.nvim_buf_set_option(buf, "swapfile", false)
-  vim.api.nvim_buf_set_option(buf, "buflisted", false)
-  vim.api.nvim_buf_set_option(buf, "modifiable", false)
+  vim.api.nvim_buf_set_option(buf, 'buftype', '')
+  vim.api.nvim_buf_set_option(buf, 'bufhidden', 'hide')
+  vim.api.nvim_buf_set_option(buf, 'swapfile', false)
+  vim.api.nvim_buf_set_option(buf, 'buflisted', false)
+  vim.api.nvim_buf_set_option(buf, 'modifiable', false)
 
-  vim.api.nvim_win_set_option(win, "wrap", false)
-  vim.api.nvim_win_set_option(win, "number", false)
-  vim.api.nvim_win_set_option(win, "list", false)
+  vim.api.nvim_win_set_option(win, 'wrap', false)
+  vim.api.nvim_win_set_option(win, 'number', false)
+  vim.api.nvim_win_set_option(win, 'list', false)
 
   -- Keymaps
   local options = {
@@ -25,7 +25,7 @@ local function create_cmd_win()
     silent = true,
     expr = false,
   }
-  vim.api.nvim_buf_set_keymap(0, "n", "<CR>", "<CMD>lua require('git.cmd').close()<CR>", options)
+  vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', "<CMD>lua require('user.git.cmd').close()<CR>", options)
 end
 
 function M.close()
@@ -47,20 +47,20 @@ end
 function M.cmd(...)
   local args = { ... }
   if #args == 0 then
-    utils.log "Please provide a command"
+    utils.log 'Please provide a command'
     return
   end
 
-  local cmd = "git"
+  local cmd = 'git'
   for _, arg in pairs(args) do
-    cmd = cmd .. " " .. arg
+    cmd = cmd .. ' ' .. arg
   end
 
   -- Close existing terminal first
   M.close()
   create_cmd_win()
   vim.fn.termopen(cmd, {
-    ["cwd"] = vim.fn.getcwd(),
+    ['cwd'] = vim.fn.getcwd(),
   })
 end
 
