@@ -1,5 +1,4 @@
 local utils = require 'user.git.utils'
-local git = require 'user.git.utils.git'
 
 local M = {}
 
@@ -160,7 +159,7 @@ function M.blame_commit()
     return
   end
 
-  local commit_hash = git.run_git_cmd(
+  local commit_hash = utils.run_git_cmd(
     'git -C ' .. blame_state.git_root .. ' --literal-pathspecs rev-parse --verify ' .. commit .. ' --'
   )
   if commit_hash == nil then
@@ -215,7 +214,7 @@ function M.blame()
     return
   end
 
-  local git_root = git.get_git_repo()
+  local git_root = utils.get_git_repo()
   if git_root == '' then
     return
   end
