@@ -19,13 +19,11 @@ local function create_cmd_win()
   vim.api.nvim_win_set_option(win, 'number', false)
   vim.api.nvim_win_set_option(win, 'list', false)
 
-  -- Keymaps
-  local options = {
+  vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', require('user.git.cmd').close, {
     noremap = true,
     silent = true,
     expr = false,
-  }
-  vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', "<CMD>lua require('user.git.cmd').close()<CR>", options)
+  })
 end
 
 function M.close()
