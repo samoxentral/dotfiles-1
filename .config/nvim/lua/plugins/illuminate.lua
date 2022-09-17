@@ -1,4 +1,4 @@
-vim.g.Illuminate_ftblacklist = { 'NvimTree', 'alpha' }
+vim.g.Illuminate_ftblacklist = { 'NvimTree', 'alpha', 'git.nvim' }
 
 vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
 vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
