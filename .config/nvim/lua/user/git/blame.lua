@@ -66,8 +66,14 @@ local function format_blame_lines(lines)
   local result = {}
 
   for i = 1, #lines do
-    local line = string.gsub(lines[i], '^%s*(.-)%s*$', '%1')
-    table.insert(result, string.sub(line, 0, -16))
+    local line = utils.trim(lines[i])
+    line = string.sub(line, 0, -16)
+
+    local hash = string.sub(line, 0, 9)
+    local author = string.sub(line, 11, -12)
+    local date = string.sub(line, -10, -1)
+
+    table.insert(result, hash .. ' ' .. date .. ' ' .. author)
   end
 
   return result

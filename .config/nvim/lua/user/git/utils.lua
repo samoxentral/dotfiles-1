@@ -32,6 +32,10 @@ function M.log(message)
   vim.notify('[git] ' .. message)
 end
 
+function M.trim(str)
+  return string.gsub(str, '^%s*(.-)%s*$', '%1')
+end
+
 ----
 
 local function process_abbrev_head(gitdir, head_str, path)
