@@ -62,6 +62,17 @@ local function blame_syntax()
   end
 end
 
+local function format_blame_lines(lines)
+  local result = {}
+
+  for i = 1, #lines do
+    local line = string.gsub(lines[i], '^%s*(.-)%s*$', '%1')
+    table.insert(result, string.sub(line, 0, -16))
+  end
+
+  return result
+end
+
 local function on_blame_done(lines)
   local starting_win = vim.api.nvim_get_current_win()
   local current_top = vim.fn.line 'w0' + vim.api.nvim_get_option('scrolloff')
@@ -72,7 +83,7 @@ local function on_blame_done(lines)
 
   local blame_win, blame_buf = create_blame_win()
 
-  vim.api.nvim_buf_set_lines(blame_buf, 0, -1, true, lines)
+  vim.api.nvim_buf_set_lines(blame_buf, 0, -1, true, format_blame_lines(lines))
   vim.api.nvim_buf_set_option(blame_buf, 'modifiable', false)
   vim.api.nvim_win_set_width(blame_win, blameLinechars() + 1)
 
