@@ -69,8 +69,8 @@ local function format_blame_lines(lines)
     local line = utils.trim(lines[i])
     line = string.sub(line, 0, -16)
 
-    local hash = string.sub(line, 0, 9)
-    local author = string.sub(line, 11, -12)
+    local hash = (line):match('^(%S+)')
+    local author = string.sub(line, #hash + 2, -12)
     local date = string.sub(line, -10, -1)
 
     table.insert(result, hash .. ' ' .. date .. ' ' .. author)
