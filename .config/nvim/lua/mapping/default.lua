@@ -33,4 +33,6 @@ map('n', '<Tab>', ':Tbufnext <cr>', default_opts)
 map('n', '<S-Tab>', ':Tbufprev <cr>', default_opts)
 
 map('n', 'tn', ':tabedit <cr>', default_opts)
-map('n', '<leader>x', function() require('user.tab-utils').close_buffer() end, default_opts)
+map('n', '<leader>x', function()
+  require('user.tab-utils').close_buffer()
+end, default_opts)

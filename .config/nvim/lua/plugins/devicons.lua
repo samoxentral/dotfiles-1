@@ -1,4 +1,4 @@
-require 'nvim-web-devicons'.setup({
+require('nvim-web-devicons').setup {
   override = {
     default_icon = { icon = '', name = 'Default' },
     c = { icon = '', name = 'c' },
@@ -29,4 +29,4 @@ require 'nvim-web-devicons'.setup({
     xz = { icon = '', name = 'xz' },
     zip = { icon = '', name = 'zip' },
   },
-})
+}

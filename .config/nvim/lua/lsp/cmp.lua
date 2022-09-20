@@ -24,7 +24,7 @@ cmp_window.info = function(self)
   return info
 end
 
-cmp.setup({
+cmp.setup {
   window = {
     completion = {
       border = border 'CmpBorder',
@@ -127,4 +127,4 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'path' },
   },
-})
+}

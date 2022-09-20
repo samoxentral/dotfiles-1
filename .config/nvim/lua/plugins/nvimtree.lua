@@ -5,7 +5,7 @@ local moveAction = function(left)
   local node = lib.get_node_at_cursor()
 
   if not node then
-    print('not node')
+    print 'not node'
     return
   end
 
@@ -25,8 +25,7 @@ local moveAction = function(left)
   end
 end
 
-
-require 'nvim-tree'.setup {
+require('nvim-tree').setup {
   filters = {
     dotfiles = false,
     exclude = { vim.fn.stdpath 'config' .. '/lua/custom' },
@@ -49,8 +48,20 @@ require 'nvim-tree'.setup {
     hide_root_folder = true,
     mappings = {
       list = {
-        { key = 'h', action = 'leftAction', action_cb = function() moveAction(true) end },
-        { key = 'l', action = 'rightAction', action_cb = function() moveAction(false) end },
+        {
+          key = 'h',
+          action = 'leftAction',
+          action_cb = function()
+            moveAction(true)
+          end,
+        },
+        {
+          key = 'l',
+          action = 'rightAction',
+          action_cb = function()
+            moveAction(false)
+          end,
+        },
         { key = 's', action = 'split' },
         { key = 'v', action = 'vsplit' },
       },

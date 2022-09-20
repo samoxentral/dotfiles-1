@@ -1,6 +1,6 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require 'colors.colors'.colors
-local base16 = require 'colors.colors'.base16
+local colors = require('colors.colors').colors
+local base16 = require('colors.colors').base16
 
 set_hl(0, 'MatchWord', { bg = colors.grey, fg = colors.white })
 

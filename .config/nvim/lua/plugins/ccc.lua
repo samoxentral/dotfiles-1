@@ -1,1 +1,1 @@
-require'ccc'.setup{}
+require('ccc').setup {}

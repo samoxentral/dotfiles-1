@@ -1,6 +1,6 @@
 local set_hl = vim.api.nvim_set_hl
-local base16 = require 'colors.colors'.base16
-local colors = require 'colors.colors'.colors
+local base16 = require('colors.colors').base16
+local colors = require('colors.colors').colors
 
 set_hl(0, 'TbLineBufOnDefault', { fg = colors.white, bg = colors.black, bold = true })
 set_hl(0, 'TbLineBufOnChanged', { fg = base16.base0C, bg = colors.black, bold = true })

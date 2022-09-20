@@ -94,7 +94,7 @@ M.LSP_status = function()
 end
 
 M.pwd = function()
-  local dir_name = fn.fnamemodify(fn.expand('%'), ':~:.')
+  local dir_name = fn.fnamemodify(fn.expand '%', ':~:.')
   return '%#St_cwd_text#' .. ' ' .. dir_name:gsub('/', ' / ')
 end
 

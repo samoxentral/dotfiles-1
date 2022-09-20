@@ -69,7 +69,7 @@ local function format_blame_lines(lines)
     local line = utils.trim(lines[i])
     line = string.sub(line, 0, -16)
 
-    local hash = (line):match('^(%S+)')
+    local hash = (line):match '^(%S+)'
     local author = string.sub(line, #hash + 2, -12)
     local date = string.sub(line, -10, -1)
 
@@ -81,7 +81,7 @@ end
 
 local function on_blame_done(lines)
   local starting_win = vim.api.nvim_get_current_win()
-  local current_top = vim.fn.line 'w0' + vim.api.nvim_get_option('scrolloff')
+  local current_top = vim.fn.line 'w0' + vim.api.nvim_get_option 'scrolloff'
   local current_pos = vim.fn.line '.'
 
   -- Save the state
@@ -173,9 +173,9 @@ function M.blame_commit()
 
   commit_hash = string.gsub(commit_hash, '\n', '')
   local diff_cmd = 'git -C '
-      .. blame_state.git_root
-      .. ' --literal-pathspecs --no-pager show --no-color '
-      .. commit_hash
+    .. blame_state.git_root
+    .. ' --literal-pathspecs --no-pager show --no-color '
+    .. commit_hash
 
   local lines = {}
   local function on_event(_, data, event)
@@ -227,9 +227,9 @@ function M.blame()
   blame_state.file_name = vim.fn.fnamemodify(vim.fn.expand '%:t', ':~:.')
 
   local blame_cmd = 'git -C '
-      .. git_root
-      .. ' --literal-pathspecs --no-pager -c blame.coloring=none -c blame.blankBoundary=false blame --show-number -- '
-      .. fpath
+    .. git_root
+    .. ' --literal-pathspecs --no-pager -c blame.coloring=none -c blame.blankBoundary=false blame --show-number -- '
+    .. fpath
 
   local lines = {}
   local has_error = false

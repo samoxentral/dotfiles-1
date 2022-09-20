@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require 'colors.colors'.colors
+local colors = require('colors.colors').colors
 
 set_hl(0, 'IndentBlanklineChar', { fg = colors.line })
 set_hl(0, 'IndentBlanklineSpaceChar', { fg = colors.line })

@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local base16 = require 'colors.colors'.base16
+local base16 = require('colors.colors').base16
 
 set_hl(0, 'TSAnnotation', { fg = base16.base0F, sp = 'none' })
 set_hl(0, 'TSAttribute', { fg = base16.base0A, sp = 'none' })

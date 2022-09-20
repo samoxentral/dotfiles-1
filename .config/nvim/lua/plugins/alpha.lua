@@ -69,7 +69,7 @@ local fn = vim.fn
 local marginTopPercent = 0.3
 local headerPadding = fn.max { 2, fn.floor(fn.winheight(0) * marginTopPercent) }
 
-require 'alpha'.setup {
+require('alpha').setup {
   layout = {
     { type = 'padding', val = headerPadding },
     options.header,

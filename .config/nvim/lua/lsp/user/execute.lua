@@ -35,7 +35,9 @@ function Finder:lsp_finder_request(method)
     self.uri = 0
 
     -- local request_intance = coroutine.create(send_request)
-    local request_intance = coroutine.create(function() send_request(method) end)
+    local request_intance = coroutine.create(function()
+      send_request(method)
+    end)
     self.buf_filetype = vim.api.nvim_buf_get_option(0, 'filetype')
 
     local has_result = false
@@ -63,7 +65,6 @@ function Finder:create_finder_contents(result, root_dir)
   local home_dir = os.getenv 'HOME'
   local target_lnum = 1
   if type(result) == 'table' then
-
     local params = vim.fn.expand '<cword>'
     self.param_length = #params
 
@@ -102,12 +103,7 @@ function Finder:create_finder_contents(result, root_dir)
       local target_line = '[' .. index .. ']' .. ' ' .. short_name .. ' :' .. range.start.line + 1
       table.insert(self.contents, target_line)
 
-      local lines = vim.api.nvim_buf_get_lines(
-        bufnr,
-        0,
-        range['end'].line + 10000,
-        false
-      )
+      local lines = vim.api.nvim_buf_get_lines(bufnr, 0, range['end'].line + 10000, false)
 
       self.short_link[target_lnum] = {
         link = link,
@@ -174,7 +170,7 @@ function Finder:render_finder_result()
   if not self.cursor_line_bg and not self.cursor_line_fg then
     self:get_cursorline_highlight()
   end
-  vim.api.nvim_command "highlight! link CursorLine LspSagaFinderSelection"
+  vim.api.nvim_command 'highlight! link CursorLine LspSagaFinderSelection'
   vim.api.nvim_command "autocmd CursorMoved <buffer> lua require('lsp.user.execute').auto_open_preview()"
   vim.api.nvim_command "autocmd QuitPre <buffer> lua require('lsp.user.execute').close_lsp_finder_window()"
 
@@ -189,13 +185,13 @@ function Finder:apply_float_map()
   local lhs = { noremap = true, silent = true }
   local map = vim.api.nvim_buf_set_keymap
 
-  for _, mode in ipairs({ 'o', '<cr>' }) do
+  for _, mode in ipairs { 'o', '<cr>' } do
     map(self.bufnr, 'n', mode, ":lua require'lsp.user.execute'.open_link(1)<CR>", lhs)
   end
   map(self.bufnr, 'n', 's', ":lua require'lsp.user.execute'.open_link(2)<CR>", lhs)
   map(self.bufnr, 'n', 'i', ":lua require'lsp.user.execute'.open_link(3)<CR>", lhs)
 
-  for _, mode in ipairs({ 'q', '<esc>' }) do
+  for _, mode in ipairs { 'q', '<esc>' } do
     map(self.bufnr, 'n', mode, ":lua require'lsp.user.execute'.close_lsp_finder_window()<CR>", lhs)
   end
 end
@@ -325,7 +321,7 @@ function Finder:clear_tmp_data()
     vim.api.nvim_command('hi! CursorLine  guibg=' .. self.cursor_line_bg)
   end
   if self.cursor_line_fg == '' then
-    vim.api.nvim_command('hi! CursorLine  guifg=NONE')
+    vim.api.nvim_command 'hi! CursorLine  guifg=NONE'
   end
 end
 

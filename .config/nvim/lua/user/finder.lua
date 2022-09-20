@@ -9,13 +9,13 @@ return function(exec)
   local node = lib.get_node_at_cursor()
 
   if not node then
-    print('not node')
+    print 'not node'
     return
   end
 
   if node.open == nil then
-    exec({ search_dirs = { node.parent.absolute_path } })
+    exec { search_dirs = { node.parent.absolute_path } }
   else
-    exec({ search_dirs = { node.absolute_path } })
+    exec { search_dirs = { node.absolute_path } }
   end
 end

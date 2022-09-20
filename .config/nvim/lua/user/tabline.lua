@@ -53,9 +53,9 @@ local function add_fileInfo(name, bufnr, style)
   local pad = (24 - #fileInfo) / 2
 
   icon = (
-      api.nvim_get_current_buf() == bufnr and new_hl(icon_hl, 'TbLineBufOn') .. ' ' .. icon
-          or new_hl(icon_hl, 'TbLineBufOff') .. ' ' .. icon
-      )
+    api.nvim_get_current_buf() == bufnr and new_hl(icon_hl, 'TbLineBufOn') .. ' ' .. icon
+    or new_hl(icon_hl, 'TbLineBufOff') .. ' ' .. icon
+  )
 
   name = style .. ' ' .. name .. ' '
 

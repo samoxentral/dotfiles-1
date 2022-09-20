@@ -1,4 +1,4 @@
-require('mason').setup({
+require('mason').setup {
   ui = {
     icons = {
       package_pending = ' ',
@@ -19,9 +19,9 @@ require('mason').setup({
   },
 
   max_concurrent_installers = 10,
-})
+}
 
-require('mason-lspconfig').setup({
+require('mason-lspconfig').setup {
   ensure_installed = {
     'intelephense',
     'tsserver',
@@ -30,4 +30,4 @@ require('mason-lspconfig').setup({
     'sumneko_lua',
     'dockerls',
   },
-})
+}
