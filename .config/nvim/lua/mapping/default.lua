@@ -1,9 +1,6 @@
 local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 
--- Fast escape
-map('i', 'jk', '<Esc>', { noremap = true })
-
 map('n', '<ESC>', ':noh <cr>', default_opts)
 map('n', '<C-s>', ':w <cr>', default_opts)
 
