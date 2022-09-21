@@ -19,7 +19,7 @@ set_hl(0, 'LineNr', { fg = colors.grey })
 set_hl(0, 'FloatBorder', { fg = colors.blue })
 set_hl(0, 'NormalFloat', { bg = colors.darker_black })
 
-set_hl(0, 'NvimInternalError', { fg = colors.red })
+set_hl(0, 'NvimInternalError', { fg = colors.base0F })
 set_hl(0, 'WinSeparator', { fg = colors.line })
 
 set_hl(0, 'Normal', { fg = colors.base05, bg = colors.base00 })
