@@ -26,6 +26,5 @@ return {
   light_grey = '#6f737b',
   line = '#31353d',
   nord_blue = '#81A1C1',
-  teal = '#519ABA',
   cyan = '#a3b8ef',
 }

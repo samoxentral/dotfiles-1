@@ -16,7 +16,7 @@ set_hl(0, 'St_TerminalMode', { bg = colors.base0B, fg = colors.base00, bold = tr
 set_hl(0, 'St_NTerminalMode', { bg = colors.base0A, fg = colors.base00, bold = true })
 set_hl(0, 'St_VisualMode', { bg = colors.cyan, fg = colors.base00, bold = true })
 set_hl(0, 'St_ReplaceMode', { bg = colors.base08, fg = colors.base00, bold = true })
-set_hl(0, 'St_ConfirmMode', { bg = colors.teal, fg = colors.base00, bold = true })
+set_hl(0, 'St_ConfirmMode', { bg = colors.base09, fg = colors.base00, bold = true })
 set_hl(0, 'St_CommandMode', { bg = colors.base0B, fg = colors.base00, bold = true })
 set_hl(0, 'St_SelectMode', { bg = colors.nord_blue, fg = colors.base00, bold = true })
 set_hl(0, 'St_EmptySpace', { fg = colors.grey, bg = colors.lightbg })
