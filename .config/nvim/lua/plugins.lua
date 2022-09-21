@@ -42,7 +42,6 @@ return require('packer').startup(function()
   use 'williamboman/mason-lspconfig.nvim'
 
   -- snippets
-  use 'rafamadriz/friendly-snippets'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
 

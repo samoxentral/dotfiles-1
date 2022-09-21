@@ -1,17 +1,15 @@
-local present, luasnip = pcall(require, 'luasnip')
+local luasnip = require 'luasnip'
 
-if not present then
-  return
-end
-
-local options = {
+luasnip.config.set_config {
   history = true,
   updateevents = 'TextChanged,TextChangedI',
 }
 
-luasnip.config.set_config(options)
 require('luasnip.loaders.from_vscode').lazy_load()
-require('luasnip.loaders.from_vscode').lazy_load { paths = vim.g.luasnippets_path or '' }
+require('luasnip.loaders.from_vscode').lazy_load { paths = { './snippets' } }
+require('luasnip.loaders.from_snipmate').lazy_load()
+
+luasnip.filetype_extend('all', { '_' })
 
 vim.api.nvim_create_autocmd('InsertLeave', {
   callback = function()
