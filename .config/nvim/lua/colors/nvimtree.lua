@@ -2,7 +2,7 @@ local set_hl = vim.api.nvim_set_hl
 local base16 = require('colors.colors').base16
 local colors = require('colors.colors').colors
 
-local fontColor = { fg = colors.blue }
+local fontColor = { fg = base16.base0D }
 
 set_hl(0, 'NvimTreeEmptyFolderName', fontColor)
 set_hl(0, 'NvimTreeEndOfBuffer', { fg = colors.darker_black })

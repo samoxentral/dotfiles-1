@@ -4,7 +4,7 @@ local colors = require('colors.colors').colors
 
 local kek2 = { fg = colors.cyan, bg = colors.cyan }
 
-set_hl(0, 'LspSagaFinderSelection', { fg = colors.blue, bg = 'none', bold = true })
+set_hl(0, 'LspSagaFinderSelection', { fg = base16.base0D, bg = 'none', bold = true })
 
 set_hl(0, 'LspFloatWinBorder', { fg = colors.darker_black, bg = colors.darker_black })
 set_hl(0, 'LspFloatWinNormal', { bg = colors.darker_black })
