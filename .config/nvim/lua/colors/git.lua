@@ -1,7 +1,7 @@
 local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
-set_hl(0, 'DiffAdd', { fg = colors.blue })
+set_hl(0, 'DiffAdd', { fg = colors.base0D })
 set_hl(0, 'DiffAdded', { fg = colors.base0B })
 set_hl(0, 'DiffChange', { fg = colors.light_grey })
 set_hl(0, 'DiffChangeDelete', { fg = colors.base0F })

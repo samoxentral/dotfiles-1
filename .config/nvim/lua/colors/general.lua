@@ -5,7 +5,7 @@ set_hl(0, 'MatchWord', { bg = colors.grey, fg = colors.base05 })
 
 set_hl(0, 'Pmenu', { bg = colors.one_bg })
 set_hl(0, 'PmenuSbar', { bg = colors.one_bg })
-set_hl(0, 'PmenuSel', { bg = colors.blue, fg = colors.base00 })
+set_hl(0, 'PmenuSel', { bg = colors.base0D, fg = colors.base00 })
 set_hl(0, 'PmenuThumb', { bg = colors.grey })
 
 set_hl(0, 'MatchParen', { link = 'MatchWord' })
@@ -16,7 +16,7 @@ set_hl(0, 'CursorLineNr', { fg = colors.base05 })
 set_hl(0, 'LineNr', { fg = colors.grey })
 
 -- floating windows
-set_hl(0, 'FloatBorder', { fg = colors.blue })
+set_hl(0, 'FloatBorder', { fg = colors.base0D })
 set_hl(0, 'NormalFloat', { bg = colors.darker_black })
 
 set_hl(0, 'NvimInternalError', { fg = colors.base0F })
