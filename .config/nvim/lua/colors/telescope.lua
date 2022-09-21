@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require('colors.colors')
+local colors = require 'colors.colors'
 
 set_hl(0, 'TelescopeBorder', { fg = colors.darker_black, bg = colors.darker_black })
 set_hl(0, 'TelescopePromptBorder', { fg = colors.black2, bg = colors.black2 })

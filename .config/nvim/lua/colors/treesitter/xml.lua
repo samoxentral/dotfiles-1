@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require('colors.colors')
+local colors = require 'colors.colors'
 
 set_hl(0, 'xmlTagName', { fg = colors.base0C })
 set_hl(0, 'xmlTag', { fg = colors.base0C })

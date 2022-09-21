@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require('colors.colors')
+local colors = require 'colors.colors'
 
 -- nvim cmp
 set_hl(0, 'CmpItemAbbr', { fg = colors.base05 })

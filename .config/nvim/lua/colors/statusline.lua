@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require('colors.colors')
+local colors = require 'colors.colors'
 
 set_hl(0, 'StatusLine', { bg = colors.base00 })
 set_hl(0, 'St_gitIcons', { fg = colors.light_grey, bg = colors.base00, bold = true })

@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require('colors.colors')
+local colors = require 'colors.colors'
 
 set_hl(0, 'TbLineBufOnDefault', { fg = colors.base05, bg = colors.base00, bold = true })
 set_hl(0, 'TbLineBufOnChanged', { fg = colors.base0C, bg = colors.base00, bold = true })

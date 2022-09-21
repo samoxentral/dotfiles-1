@@ -1,5 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
-local colors = require('colors.colors')
+local colors = require 'colors.colors'
 
 set_hl(0, 'phpTSAttribute', { fg = colors.base0D })
 set_hl(0, 'phpTSString', { fg = colors.base0A })
