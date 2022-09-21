@@ -1,16 +1,15 @@
 local set_hl = vim.api.nvim_set_hl
-local base16 = require('colors.colors').base16
-local colors = require('colors.colors').colors
+local colors = require('colors.colors')
 
 set_hl(0, 'TelescopeBorder', { fg = colors.darker_black, bg = colors.darker_black })
 set_hl(0, 'TelescopePromptBorder', { fg = colors.black2, bg = colors.black2 })
-set_hl(0, 'TelescopePromptNormal', { fg = base16.base05, bg = colors.black2 })
+set_hl(0, 'TelescopePromptNormal', { fg = colors.base05, bg = colors.black2 })
 set_hl(0, 'TelescopePromptPrefix', { fg = colors.red, bg = colors.black2 })
 set_hl(0, 'TelescopeNormal', { bg = colors.darker_black })
-set_hl(0, 'TelescopePreviewTitle', { fg = base16.base00, bg = base16.base0B })
-set_hl(0, 'TelescopePromptTitle', { fg = base16.base00, bg = colors.red })
+set_hl(0, 'TelescopePreviewTitle', { fg = colors.base00, bg = colors.base0B })
+set_hl(0, 'TelescopePromptTitle', { fg = colors.base00, bg = colors.red })
 set_hl(0, 'TelescopeResultsTitle', { fg = colors.darker_black, bg = colors.darker_black })
-set_hl(0, 'TelescopeSelection', { bg = base16.base02, fg = base16.base05 })
-set_hl(0, 'TelescopeResultsDiffAdd', { fg = base16.base0B })
-set_hl(0, 'TelescopeResultsDiffChange', { fg = base16.base0A })
+set_hl(0, 'TelescopeSelection', { bg = colors.base02, fg = colors.base05 })
+set_hl(0, 'TelescopeResultsDiffAdd', { fg = colors.base0B })
+set_hl(0, 'TelescopeResultsDiffChange', { fg = colors.base0A })
 set_hl(0, 'TelescopeResultsDiffDelete', { fg = colors.red })

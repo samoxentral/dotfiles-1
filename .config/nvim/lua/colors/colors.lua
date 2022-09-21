@@ -1,6 +1,4 @@
-local M = {}
-
-M.base16 = {
+return {
   base00 = '#1e222a',
   base01 = '#333333',
   base02 = '#3e4451',
@@ -17,9 +15,7 @@ M.base16 = {
   base0D = '#82aaff',
   base0E = '#c792ea',
   base0F = '#be5046',
-}
 
-M.colors = {
   darker_black = '#1b1f27',
   black2 = '#252931',
   one_bg = '#282c34',
@@ -37,5 +33,3 @@ M.colors = {
   orange = '#fca2aa',
   cyan = '#a3b8ef',
 }
-
-return M

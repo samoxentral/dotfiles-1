@@ -1,4 +1,4 @@
 local set_hl = vim.api.nvim_set_hl
-local base16 = require('colors.colors').base16
+local colors = require('colors.colors')
 
-set_hl(0, 'JsonScalar', { fg = base16.base0E })
+set_hl(0, 'JsonScalar', { fg = colors.base0E })
