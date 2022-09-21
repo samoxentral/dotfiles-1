@@ -3,7 +3,7 @@ local colors = require('colors.colors').colors
 local base16 = require('colors.colors').base16
 
 -- nvim cmp
-set_hl(0, 'CmpItemAbbr', { fg = colors.white })
+set_hl(0, 'CmpItemAbbr', { fg = base16.base05 })
 set_hl(0, 'CmpItemAbbrMatch', { fg = colors.blue, bold = true })
 set_hl(0, 'CmpBorder', { fg = colors.grey })
 set_hl(0, 'CmpDocBorder', { fg = colors.darker_black, bg = colors.darker_black })

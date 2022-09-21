@@ -20,10 +20,6 @@ M.base16 = {
 }
 
 M.colors = {
-  black = M.base16.base00,
-  grey_fg = M.base16.base04,
-  white = M.base16.base05,
-  green = M.base16.base0B,
   darker_black = '#1b1f27',
   black2 = '#252931',
   one_bg = '#282c34',
@@ -40,7 +36,6 @@ M.colors = {
   blue = '#61afef',
   yellow = '#e7c787',
   sun = '#EBCB8B',
-  purple = '#de98fd',
   dark_purple = '#c882e7',
   teal = '#519ABA',
   orange = '#fca2aa',

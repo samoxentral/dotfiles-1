@@ -1,4 +1,5 @@
 local set_hl = vim.api.nvim_set_hl
+local base16 = require('colors.colors').base16
 local colors = require('colors.colors').colors
 
 local kek2 = { fg = colors.cyan, bg = colors.cyan }
@@ -12,4 +13,4 @@ set_hl(0, 'LspSagaLspFinderBorder', kek2)
 set_hl(0, 'LspSagaAutoPreview', kek2)
 set_hl(0, 'LspSagaAutoPreviewLink', { bg = colors.one_bg3 })
 
-set_hl(0, 'TargetFileName', { fg = colors.grey_fg })
+set_hl(0, 'TargetFileName', { fg = base16.base04 })
