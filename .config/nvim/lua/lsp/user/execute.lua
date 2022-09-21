@@ -159,7 +159,6 @@ function Finder:render_finder_result()
     contents = self.contents,
     filetype = 'LspsagaFinder',
     enter = true,
-    highlight = 'LspSagaLspFinderBorder',
   }
 
   self.bufnr, self.winid = window.create_win_with_border(content_opts, opts)
@@ -261,7 +260,6 @@ function Finder:auto_open_preview()
     local content_opts = {
       contents = content,
       filetype = self.buf_filetype,
-      highlight = 'LspSagaAutoPreview',
       row = self.short_link[current_line].row,
       col = self.short_link[current_line].col,
     }
