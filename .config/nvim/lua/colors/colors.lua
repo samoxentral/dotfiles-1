@@ -28,6 +28,5 @@ return {
   nord_blue = '#81A1C1',
   blue = '#61afef',
   teal = '#519ABA',
-  orange = '#fca2aa',
   cyan = '#a3b8ef',
 }
