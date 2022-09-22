@@ -20,8 +20,6 @@ return {
   black2 = '#252931',
   one_bg = '#282c34',
   lightbg = '#2d3139',
-  one_bg2 = '#353b45',
-  one_bg3 = '#373b43',
   grey = '#42464e',
   line = '#31353d',
   nord_blue = '#81A1C1',

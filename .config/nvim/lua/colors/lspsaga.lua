@@ -6,6 +6,6 @@ set_hl(0, 'LspSagaFinderSelection', { fg = colors.base0D, bg = 'none', bold = tr
 set_hl(0, 'LspFloatWinBorder', { fg = colors.darker_black, bg = colors.darker_black })
 set_hl(0, 'LspFloatWinNormal', { bg = colors.darker_black })
 
-set_hl(0, 'LspSagaAutoPreviewLink', { bg = colors.one_bg3 })
+set_hl(0, 'LspSagaAutoPreviewLink', { bg = colors.base01 })
 
 set_hl(0, 'TargetFileName', { fg = colors.base04 })

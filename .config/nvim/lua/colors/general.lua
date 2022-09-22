@@ -53,7 +53,7 @@ set_hl(0, 'NonText', { fg = colors.base03 })
 set_hl(0, 'SignColumn', { fg = colors.base03, sp = 'none' })
 set_hl(0, 'ColorColumn', { bg = colors.base01, sp = 'none' })
 set_hl(0, 'CursorColumn', { bg = colors.base01, sp = 'none' })
-set_hl(0, 'CursorLine', { bg = colors.one_bg3, sp = 'none' })
+set_hl(0, 'CursorLine', { bg = colors.base01, sp = 'none' })
 set_hl(0, 'QuickFixLine', { bg = colors.base01, sp = 'none' })
 
 -- spell
