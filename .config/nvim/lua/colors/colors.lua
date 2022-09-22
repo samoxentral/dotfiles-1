@@ -19,7 +19,6 @@ return {
   darker_black = '#1b1f27',
   black2 = '#252931',
   one_bg = '#282c34',
-  lightbg = '#2d3139',
   grey = '#42464e',
   line = '#31353d',
 }
