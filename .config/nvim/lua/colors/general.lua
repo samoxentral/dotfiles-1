@@ -1,19 +1,19 @@
 local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
-set_hl(0, 'MatchWord', { bg = colors.grey, fg = colors.base05 })
+set_hl(0, 'MatchWord', { bg = colors.base02, fg = colors.base05 })
 
-set_hl(0, 'Pmenu', { bg = colors.one_bg })
-set_hl(0, 'PmenuSbar', { bg = colors.one_bg })
+set_hl(0, 'Pmenu', { bg = colors.base01 })
+set_hl(0, 'PmenuSbar', { bg = colors.base01 })
 set_hl(0, 'PmenuSel', { bg = colors.base0D, fg = colors.base00 })
-set_hl(0, 'PmenuThumb', { bg = colors.grey })
+set_hl(0, 'PmenuThumb', { bg = colors.base02 })
 
 set_hl(0, 'MatchParen', { link = 'MatchWord' })
 
 set_hl(0, 'Comment', { fg = colors.base03, italic = true })
 
 set_hl(0, 'CursorLineNr', { fg = colors.base05 })
-set_hl(0, 'LineNr', { fg = colors.grey })
+set_hl(0, 'LineNr', { fg = colors.base02 })
 
 -- floating windows
 set_hl(0, 'FloatBorder', { fg = colors.base0D })

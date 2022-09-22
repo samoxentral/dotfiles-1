@@ -4,7 +4,7 @@ local colors = require 'colors.colors'
 -- nvim cmp
 set_hl(0, 'CmpItemAbbr', { fg = colors.base05 })
 set_hl(0, 'CmpItemAbbrMatch', { fg = colors.base0D, bold = true })
-set_hl(0, 'CmpBorder', { fg = colors.grey })
+set_hl(0, 'CmpBorder', { fg = colors.base02 })
 set_hl(0, 'CmpDocBorder', { fg = colors.darker_black, bg = colors.darker_black })
 set_hl(0, 'CmPmenu', { bg = colors.darker_black })
 
