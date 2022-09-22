@@ -2,7 +2,7 @@ local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
 set_hl(0, 'StatusLine', { bg = colors.base00 })
-set_hl(0, 'St_gitIcons', { fg = colors.light_grey, bg = colors.base00, bold = true })
+set_hl(0, 'St_gitIcons', { fg = colors.base04, bg = colors.base00, bold = true })
 set_hl(0, 'St_lspError', { fg = colors.base0F, bg = colors.base00 })
 set_hl(0, 'St_lspWarning', { fg = colors.base0A, bg = colors.base00 })
 set_hl(0, 'St_LspHints', { fg = colors.base0E, bg = colors.base00 })
@@ -23,5 +23,5 @@ set_hl(0, 'St_EmptySpace', { fg = colors.grey, bg = colors.lightbg })
 set_hl(0, 'St_EmptySpace2', { fg = colors.grey, bg = colors.base00 })
 set_hl(0, 'St_file_info', { bg = colors.lightbg, fg = colors.base05 })
 set_hl(0, 'St_file_sep', { bg = colors.base00, fg = colors.lightbg })
-set_hl(0, 'St_cwd_text', { fg = colors.light_grey, bg = colors.base00 })
+set_hl(0, 'St_cwd_text', { fg = colors.base04, bg = colors.base00 })
 set_hl(0, 'St_DapStatus', { fg = colors.base0B, bg = colors.base00 })

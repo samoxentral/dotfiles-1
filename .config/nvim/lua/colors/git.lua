@@ -3,7 +3,7 @@ local colors = require 'colors.colors'
 
 set_hl(0, 'DiffAdd', { fg = colors.base0D })
 set_hl(0, 'DiffAdded', { fg = colors.base0B })
-set_hl(0, 'DiffChange', { fg = colors.light_grey })
+set_hl(0, 'DiffChange', { fg = colors.base04 })
 set_hl(0, 'DiffChangeDelete', { fg = colors.base0F })
 set_hl(0, 'DiffModified', { fg = colors.base08 })
 set_hl(0, 'DiffDelete', { fg = colors.base0F })

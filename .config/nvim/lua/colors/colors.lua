@@ -23,7 +23,6 @@ return {
   one_bg2 = '#353b45',
   one_bg3 = '#373b43',
   grey = '#42464e',
-  light_grey = '#6f737b',
   line = '#31353d',
   nord_blue = '#81A1C1',
   cyan = '#a3b8ef',
