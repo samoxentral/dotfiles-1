@@ -20,5 +20,4 @@ return {
   black2 = '#252931',
   one_bg = '#282c34',
   grey = '#42464e',
-  line = '#31353d',
 }
