@@ -1,6 +1,6 @@
 return {
   base00 = '#1e222a',
-  base01 = '#333333',
+  base01 = '#252931',
   base02 = '#3e4451',
   base03 = '#545862',
   base04 = '#565c64',
@@ -17,5 +17,4 @@ return {
   base0F = '#be5046',
 
   darker_black = '#1b1f27',
-  black2 = '#252931',
 }
