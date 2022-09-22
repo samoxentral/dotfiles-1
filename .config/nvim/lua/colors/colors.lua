@@ -22,6 +22,4 @@ return {
   lightbg = '#2d3139',
   grey = '#42464e',
   line = '#31353d',
-  nord_blue = '#81A1C1',
-  cyan = '#a3b8ef',
 }

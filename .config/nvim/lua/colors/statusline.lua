@@ -1,24 +1,29 @@
 local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
+local cl = {
+  nord_blue = '#81A1C1',
+  cyan = '#a3b8ef',
+}
+
 set_hl(0, 'StatusLine', { bg = colors.base00 })
 set_hl(0, 'St_gitIcons', { fg = colors.base04, bg = colors.base00, bold = true })
 set_hl(0, 'St_lspError', { fg = colors.base0F, bg = colors.base00 })
 set_hl(0, 'St_lspWarning', { fg = colors.base0A, bg = colors.base00 })
 set_hl(0, 'St_LspHints', { fg = colors.base0E, bg = colors.base00 })
 set_hl(0, 'St_LspInfo', { fg = colors.base0B, bg = colors.base00 })
-set_hl(0, 'St_LspStatus', { fg = colors.nord_blue, bg = colors.base00 })
+set_hl(0, 'St_LspStatus', { fg = cl.nord_blue, bg = colors.base00 })
 set_hl(0, 'St_LspProgress', { fg = colors.base0B, bg = colors.base00 })
-set_hl(0, 'St_LspStatus_Icon', { fg = colors.base00, bg = colors.nord_blue })
-set_hl(0, 'St_NormalMode', { bg = colors.nord_blue, fg = colors.base00, bold = true })
+set_hl(0, 'St_LspStatus_Icon', { fg = colors.base00, bg = cl.nord_blue })
+set_hl(0, 'St_NormalMode', { bg = cl.nord_blue, fg = colors.base00, bold = true })
 set_hl(0, 'St_InsertMode', { bg = colors.base0E, fg = colors.base00, bold = true })
 set_hl(0, 'St_TerminalMode', { bg = colors.base0B, fg = colors.base00, bold = true })
 set_hl(0, 'St_NTerminalMode', { bg = colors.base0A, fg = colors.base00, bold = true })
-set_hl(0, 'St_VisualMode', { bg = colors.cyan, fg = colors.base00, bold = true })
+set_hl(0, 'St_VisualMode', { bg = cl.cyan, fg = colors.base00, bold = true })
 set_hl(0, 'St_ReplaceMode', { bg = colors.base08, fg = colors.base00, bold = true })
 set_hl(0, 'St_ConfirmMode', { bg = colors.base09, fg = colors.base00, bold = true })
 set_hl(0, 'St_CommandMode', { bg = colors.base0B, fg = colors.base00, bold = true })
-set_hl(0, 'St_SelectMode', { bg = colors.nord_blue, fg = colors.base00, bold = true })
+set_hl(0, 'St_SelectMode', { bg = cl.nord_blue, fg = colors.base00, bold = true })
 set_hl(0, 'St_EmptySpace', { fg = colors.grey, bg = colors.lightbg })
 set_hl(0, 'St_EmptySpace2', { fg = colors.grey, bg = colors.base00 })
 set_hl(0, 'St_file_info', { bg = colors.lightbg, fg = colors.base05 })
