@@ -17,7 +17,7 @@ set_hl(0, 'LineNr', { fg = colors.base02 })
 
 -- floating windows
 set_hl(0, 'FloatBorder', { fg = colors.base0D })
-set_hl(0, 'NormalFloat', { bg = colors.darker_black })
+set_hl(0, 'NormalFloat', { bg = colors.base00_X })
 
 set_hl(0, 'NvimInternalError', { fg = colors.base0F })
 set_hl(0, 'WinSeparator', { fg = colors.base01 })

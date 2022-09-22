@@ -5,8 +5,8 @@ local colors = require 'colors.colors'
 set_hl(0, 'CmpItemAbbr', { fg = colors.base05 })
 set_hl(0, 'CmpItemAbbrMatch', { fg = colors.base0D, bold = true })
 set_hl(0, 'CmpBorder', { fg = colors.base02 })
-set_hl(0, 'CmpDocBorder', { fg = colors.darker_black, bg = colors.darker_black })
-set_hl(0, 'CmPmenu', { bg = colors.darker_black })
+set_hl(0, 'CmpDocBorder', { fg = colors.base00_X, bg = colors.base00_X })
+set_hl(0, 'CmPmenu', { bg = colors.base00_X })
 
 -- cmp item kinds
 set_hl(0, 'CmpItemKindConstant', { fg = colors.base09 })

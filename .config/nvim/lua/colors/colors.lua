@@ -1,4 +1,13 @@
-return {
+local function changeColor(hex, offset)
+  hex = hex:gsub('#', '')
+
+  return '#'
+    .. string.format('%x', tonumber('0x' .. hex:sub(1, 2)) + offset)
+    .. string.format('%x', tonumber('0x' .. hex:sub(3, 4)) + offset)
+    .. string.format('%x', tonumber('0x' .. hex:sub(5, 6)) + offset)
+end
+
+local base16 = {
   base00 = '#1e222a',
   base01 = '#252931',
   base02 = '#3e4451',
@@ -15,6 +24,8 @@ return {
   base0D = '#82aaff',
   base0E = '#c792ea',
   base0F = '#be5046',
-
-  darker_black = '#1b1f27',
 }
+
+base16.base00_X = changeColor(base16.base00, -3)
+
+return base16

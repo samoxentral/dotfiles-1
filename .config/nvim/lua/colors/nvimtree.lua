@@ -4,14 +4,14 @@ local colors = require 'colors.colors'
 local fontColor = { fg = colors.base0D }
 
 set_hl(0, 'NvimTreeEmptyFolderName', fontColor)
-set_hl(0, 'NvimTreeEndOfBuffer', { fg = colors.darker_black })
+set_hl(0, 'NvimTreeEndOfBuffer', { fg = colors.base00_X })
 set_hl(0, 'NvimTreeFolderIcon', fontColor)
 set_hl(0, 'NvimTreeFolderName', fontColor)
 set_hl(0, 'NvimTreeIndentMarker', { fg = colors.base04 })
-set_hl(0, 'NvimTreeNormal', { bg = colors.darker_black })
-set_hl(0, 'NvimTreeNormalNC', { bg = colors.darker_black })
+set_hl(0, 'NvimTreeNormal', { bg = colors.base00_X })
+set_hl(0, 'NvimTreeNormalNC', { bg = colors.base00_X })
 set_hl(0, 'NvimTreeOpenedFolderName', fontColor)
-set_hl(0, 'NvimTreeWinSeparator', { fg = colors.darker_black, bg = colors.darker_black })
+set_hl(0, 'NvimTreeWinSeparator', { fg = colors.base00_X, bg = colors.base00_X })
 set_hl(0, 'NvimTreeWindowPicker', { fg = colors.base0F, bg = colors.base01 })
 set_hl(0, 'NvimTreeCursorLine', { bg = colors.base01 })
 set_hl(0, 'NvimTreeSpecialFile', { fg = colors.base05 })
