@@ -2,7 +2,7 @@ local hl = vim.highlight.create
 local sg = vim.fn.sign_define
 local colors = require 'colors.colors'
 
-hl('DapBreakpoint', { ctermbg = 0, guifg = colors.base0F, guibg = colors.base02 }, false)
+hl('DapBreakpoint', { ctermbg = 0, guifg = colors.base08, guibg = colors.base02 }, false)
 hl('DapLogPoint', { ctermbg = 0, guifg = colors.base0D, guibg = colors.base02 }, false)
 hl('DapStopped', { ctermbg = 0, guifg = colors.base0B, guibg = colors.base02 }, false)
 

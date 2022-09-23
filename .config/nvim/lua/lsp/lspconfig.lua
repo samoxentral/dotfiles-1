@@ -18,7 +18,7 @@ nvim_lsp.intelephense.setup {
   settings = {
     intelephense = {
       environment = {
-        phpVersion = '7.4',
+        phpVersion = '7.2',
       },
       files = {
         exclude = {
