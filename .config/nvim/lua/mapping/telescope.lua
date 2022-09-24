@@ -11,25 +11,18 @@ end
 
 local execute = require 'user.finder'
 
-local function visual_selection_range()
-  local _, csrow, cscol, _ = unpack(vim.fn.getpos "'<")
-  local _, cerow, cecol, _ = unpack(vim.fn.getpos "'>")
-  if csrow < cerow or (csrow == cerow and cscol <= cecol) then
-    return csrow - 1, cscol - 1, cerow - 1, cecol
-  else
-    return cerow - 1, cecol - 1, csrow - 1, cscol
-  end
-end
-
 map('n', '<leader>ff', function()
   execute(builtin.find_files)
 end, default_opts)
+
 map('n', '<leader>fa', function()
   builtin.find_files { follow = true, no_ignore = true, hidden = true }
 end, default_opts)
+
 map('n', '<leader>fw', function()
   execute(builtin.live_grep)
 end, default_opts)
+
 map('n', '<leader>fb', builtin.buffers, default_opts)
 map('n', '<leader>fh', builtin.help_tags, default_opts)
 map('n', '<leader>fo', builtin.oldfiles, default_opts)
