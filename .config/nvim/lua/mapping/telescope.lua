@@ -33,7 +33,7 @@ map('n', '<leader>gt', builtin.git_status, default_opts)
 
 map('n', '<leader>dd', dap.list_breakpoints)
 
-map('n', '<leader>sf', function()
+map('n', '<leader>fb', function()
   file_browser.file_browser {
     path = '%:p:h',
     cwd = telescope_buffer_dir(),
