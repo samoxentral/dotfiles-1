@@ -54,10 +54,6 @@ vim.cmd [[
   iabbrev retrun return
 ]]
 
-vim.cmd [[
-  " set cursorline!
-]]
-
 -- set shada path
 vim.schedule(function()
   vim.opt.shadafile = vim.fn.expand '$HOME' .. '/.local/share/nvim/shada/main.shada'

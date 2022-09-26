@@ -16,8 +16,8 @@ require('dapui').setup {
         { id = 'breakpoints', size = 0.25 },
         { id = 'stacks', size = 0.25 },
       },
-      size = 40,
-      position = 'bottom',
+      size = 100,
+      position = 'right',
     },
   },
   floating = {
