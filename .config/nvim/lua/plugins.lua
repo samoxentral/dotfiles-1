@@ -11,7 +11,6 @@ return require('packer').startup(function()
   use 'goolord/alpha-nvim'
   use 'windwp/nvim-autopairs'
   use 'tpope/vim-surround'
-  use 'norcalli/nvim-colorizer.lua'
   use 'uga-rosa/ccc.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'

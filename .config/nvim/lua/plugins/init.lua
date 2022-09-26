@@ -1,7 +1,7 @@
 require 'plugins.alpha'
 require 'plugins.auto-session'
 require 'plugins.autopairs'
-require 'plugins.colorizer'
+require 'plugins.ccc'
 require 'plugins.comment'
 require 'plugins.devicons'
 require 'plugins.gitsigns'
