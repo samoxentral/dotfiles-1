@@ -1,6 +1,6 @@
 local cmp = require 'cmp'
 
-vim.opt.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menu,menuone,noselect'
 
 local function border(hl_name)
   return {
