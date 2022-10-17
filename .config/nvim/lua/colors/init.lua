@@ -1,6 +1,6 @@
 require 'colors.alpha'
 require 'colors.cmp'
-require 'colors.dap'
+-- require 'colors.dap'
 require 'colors.devicons'
 require 'colors.general'
 require 'colors.git'
