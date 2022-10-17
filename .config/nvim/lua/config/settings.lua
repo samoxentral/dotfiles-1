@@ -5,7 +5,7 @@ local g = vim.g
 g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 
-opt.spelllang = { 'en_us',  }
+opt.spelllang = { 'en_us' }
 -- opt.spell = true
 
 opt.scrolloff = 15
