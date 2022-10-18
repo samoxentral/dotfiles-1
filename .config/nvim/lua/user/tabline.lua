@@ -1,5 +1,13 @@
+local status, devicons = pcall(require, 'nvim-web-devicons')
+if not status then
+  return {
+    run = function()
+      return ''
+    end,
+  }
+end
+
 local api = vim.api
-local devicons = require 'nvim-web-devicons'
 local fn = vim.fn
 local new_cmd = api.nvim_create_user_command
 

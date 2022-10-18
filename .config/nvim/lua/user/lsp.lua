@@ -1,3 +1,8 @@
+local status, win = pcall(require, 'lspconfig.ui.windows')
+if not status then
+  return
+end
+
 local function lspSymbol(name, icon)
   local hl = 'DiagnosticSign' .. name
   vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
@@ -39,7 +44,6 @@ vim.notify = function(msg, log_level)
 end
 
 -- Borders for LspInfo winodw
-local win = require 'lspconfig.ui.windows'
 local _default_opts = win.default_opts
 
 win.default_opts = function(options)

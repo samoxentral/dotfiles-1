@@ -113,7 +113,12 @@ M.CoverNvimTree = function()
 end
 
 M.DapStatus = function()
-  local session = require('dap').session()
+  local status, dap = pcall(require, 'dap')
+  if not status then
+    return ''
+  end
+
+  local session = dap.session()
   return (session ~= nil and '%#St_DapStatus#' .. '   DAP ~ ' .. session.config.name .. ' ') or ''
 end
 

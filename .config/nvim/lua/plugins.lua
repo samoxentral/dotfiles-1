@@ -1,6 +1,11 @@
+local status, packer = pcall(require, 'packer')
+if not status then
+  return
+end
+
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- git
