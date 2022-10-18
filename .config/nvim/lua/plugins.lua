@@ -35,7 +35,7 @@ packer.startup(function(use)
   use 'uga-rosa/ccc.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'
-  use 'rmagatti/auto-session'
+  -- use 'rmagatti/auto-session'
   use 'karb94/neoscroll.nvim'
 
   -- tree
@@ -43,8 +43,8 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   -- treesitter
-  -- use { 'nvim-treesitter/nvim-treesitter' }
-  use { 'nvim-treesitter/nvim-treesitter', commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0' }
+  use { 'nvim-treesitter/nvim-treesitter' }
+  -- use { 'nvim-treesitter/nvim-treesitter', commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0' }
   use 'nvim-treesitter/playground'
   use 'mtdl9/vim-log-highlighting'
 

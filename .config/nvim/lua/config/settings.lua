@@ -1,11 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
--- use filetype.lua instead of filetype.vim
-g.did_load_filetypes = 0
-g.do_filetype_lua = 1
-
-opt.spelllang = { 'en_us' }
+-- opt.spelllang = { 'en_us' }
 -- opt.spell = true
 
 opt.scrolloff = 15
@@ -25,6 +21,8 @@ opt.cul = true -- cursor line
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
 
 opt.fillchars = { eob = ' ' }
 opt.ignorecase = true
@@ -54,9 +52,3 @@ g.mapleader = ' '
 vim.cmd [[
   iabbrev retrun return
 ]]
-
--- set shada path
-vim.schedule(function()
-  vim.opt.shadafile = vim.fn.expand '$HOME' .. '/.local/share/nvim/shada/main.shada'
-  vim.cmd [[ silent! rsh ]]
-end)

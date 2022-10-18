@@ -10,7 +10,6 @@ nvim_treesitter.setup {
   },
   indent = {
     enable = true,
-    disalbe = {},
   },
   ensure_installed = {
     'bash',
@@ -30,14 +29,6 @@ nvim_treesitter.setup {
     'query',
     'sql',
   },
-}
-
-require('nvim-treesitter.highlight').set_custom_captures {
-  ['class_declaration'] = 'ClassDeclaration',
-  ['interface_declaration'] = 'InterfaceDeclaration',
-  ['function_call'] = 'FunctionCall',
-  ['attribute_parameter'] = 'AttributeParameter',
-  ['json_scalar'] = 'JsonScalar',
 }
 
 local f = assert(io.open(os.getenv 'HOME' .. '/.config/nvim/queries/php.scm', 'rb'))
