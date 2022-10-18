@@ -1,4 +1,9 @@
-require('dapui').setup {
+local status, dapui = pcall(require, 'dapui')
+if not status then
+  return
+end
+
+dapui.setup {
   icons = { expanded = '▾', collapsed = '▸' },
   mappings = {
     expand = { '<CR>', '<2-LeftMouse>' },
