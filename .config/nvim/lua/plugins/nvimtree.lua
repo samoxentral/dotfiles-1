@@ -1,3 +1,8 @@
+local status, nvim_tree = pcall(require, 'nvim-tree')
+if not status then
+  return
+end
+
 local moveAction = function(left)
   local lib = require 'nvim-tree.lib'
   local api = require 'nvim-tree.api'
@@ -25,7 +30,7 @@ local moveAction = function(left)
   end
 end
 
-require('nvim-tree').setup {
+nvim_tree.setup {
   filters = {
     dotfiles = false,
     exclude = { vim.fn.stdpath 'config' .. '/lua/custom' },

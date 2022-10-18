@@ -1,3 +1,8 @@
+local status, alpha = pcall(require, 'alpha')
+if not status then
+  return
+end
+
 local function button(sc, txt, keybind)
   local sc_ = sc:gsub('%s', ''):gsub('SPC', '<leader>')
 
@@ -69,7 +74,7 @@ local fn = vim.fn
 local marginTopPercent = 0.3
 local headerPadding = fn.max { 2, fn.floor(fn.winheight(0) * marginTopPercent) }
 
-require('alpha').setup {
+alpha.setup {
   layout = {
     { type = 'padding', val = headerPadding },
     options.header,
