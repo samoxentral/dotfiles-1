@@ -1,7 +1,12 @@
 local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 
-local builtin = require 'telescope.builtin'
+local status, builtin = pcall(require, 'telescope.builtin')
+
+if not status then
+  return
+end
+
 local dap = require('telescope').extensions.dap
 local execute = require 'user.finder'
 
