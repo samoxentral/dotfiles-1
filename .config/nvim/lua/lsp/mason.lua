@@ -1,4 +1,10 @@
-require('mason').setup {
+local mason_status, mason = pcall(require, 'mason')
+local mason_config_status, mason_config = pcall(require, 'mason-lspconfig')
+if not mason_status or not mason_config_status then
+  return
+end
+
+mason.setup {
   ui = {
     icons = {
       package_pending = ' ',
@@ -21,7 +27,7 @@ require('mason').setup {
   max_concurrent_installers = 10,
 }
 
-require('mason-lspconfig').setup {
+mason_config.setup {
   ensure_installed = {
     'intelephense',
     'tsserver',

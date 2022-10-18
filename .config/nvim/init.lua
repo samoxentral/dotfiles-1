@@ -1,7 +1,7 @@
 require 'plugins'
 require 'config.init'
 require 'mapping.init'
--- require 'lsp.init' -- kek
+require 'lsp.init'
 require 'plugins.init'
 require 'debug.init'
 require 'user.init'

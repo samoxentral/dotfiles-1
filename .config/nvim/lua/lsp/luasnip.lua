@@ -1,4 +1,7 @@
-local luasnip = require 'luasnip'
+local status, luasnip = pcall(require, 'luasnip')
+if not status then
+  return
+end
 
 luasnip.config.set_config {
   history = true,
@@ -13,11 +16,8 @@ luasnip.filetype_extend('all', { '_' })
 
 vim.api.nvim_create_autocmd('InsertLeave', {
   callback = function()
-    if
-      require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
-      and not require('luasnip').session.jump_active
-    then
-      require('luasnip').unlink_current()
+    if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] and not luasnip.session.jump_active then
+      luasnip.unlink_current()
     end
   end,
 })
