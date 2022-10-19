@@ -21,7 +21,7 @@ return function(use)
   use {
     'windwp/nvim-autopairs',
     config = function()
-      require 'nvim-autopairs'.setup {}
+      require('nvim-autopairs').setup {}
     end,
   }
 
@@ -37,7 +37,7 @@ return function(use)
   use {
     'numToStr/Comment.nvim',
     config = function()
-      require 'Comment'.setup {}
+      require('Comment').setup {}
     end,
   }
 
@@ -102,7 +102,7 @@ return function(use)
     },
     config = function()
       require 'plugins.config.illuminate'
-    end
+    end,
   }
 
   use 'jose-elias-alvarez/null-ls.nvim'

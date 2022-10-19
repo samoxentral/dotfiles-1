@@ -21,4 +21,4 @@ packer.init {
   },
 }
 
-packer.startup(require('plugins.plugins'))
+packer.startup(require 'plugins.plugins')
