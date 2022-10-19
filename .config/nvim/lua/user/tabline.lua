@@ -1,11 +1,4 @@
-local status, devicons = pcall(require, 'nvim-web-devicons')
-if not status then
-  return {
-    run = function()
-      return ''
-    end,
-  }
-end
+local devicons_status, devicons = pcall(require, 'nvim-web-devicons')
 
 local api = vim.api
 local fn = vim.fn
@@ -51,10 +44,15 @@ local function getBtnsWidth()
 end
 
 local function add_fileInfo(name, bufnr, style)
+  if not devicons_status then
+    return ''
+  end
+
   local icon, icon_hl = devicons.get_icon(name, string.match(name, '%a+$'))
 
   if not icon then
-    icon, icon_hl = devicons.get_icon 'default_icon'
+    icon = ''
+    icon_hl = 'Default'
   end
 
   local fileInfo = ' ' .. icon .. ' ' .. name .. ' ' -- initial value

@@ -75,3 +75,6 @@ nvim_lsp.sumneko_lua.setup {
 nvim_lsp.dockerls.setup {
   on_attach = on_attach,
 }
+
+require('utils.loader').highlight 'lsp'
+require('utils.loader').highlight 'lspsaga'

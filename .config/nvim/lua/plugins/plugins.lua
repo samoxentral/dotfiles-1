@@ -38,7 +38,13 @@ return function(use)
     end,
   }
 
-  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('utils.loader').highlight 'indentline'
+    end,
+  }
+
   use {
     'numToStr/Comment.nvim',
     config = function()

@@ -37,3 +37,5 @@ for _, name in pairs(override) do
   require('vim.treesitter.query').set_query(name, 'highlights', content)
   -- end
 end
+
+require('utils.loader').highlight 'treesitter.init'

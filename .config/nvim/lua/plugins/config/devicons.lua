@@ -30,3 +30,5 @@ require('nvim-web-devicons').setup {
     zip = { icon = '', name = 'zip' },
   },
 }
+
+require('utils.loader').highlight 'devicons'

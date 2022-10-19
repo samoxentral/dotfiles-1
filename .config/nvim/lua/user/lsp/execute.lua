@@ -1,5 +1,5 @@
-local window = require 'lsp.user.window'
-local libs = require 'lsp.user.libs'
+local window = require 'user.lsp.window'
+local libs = require 'user.lsp.libs'
 
 local max_preview_lines = 200
 
@@ -170,8 +170,8 @@ function Finder:render_finder_result()
     self:get_cursorline_highlight()
   end
   vim.api.nvim_command 'highlight! link CursorLine LspSagaFinderSelection'
-  vim.api.nvim_command "autocmd CursorMoved <buffer> lua require('lsp.user.execute').auto_open_preview()"
-  vim.api.nvim_command "autocmd QuitPre <buffer> lua require('lsp.user.execute').close_lsp_finder_window()"
+  vim.api.nvim_command "autocmd CursorMoved <buffer> lua require('user.lsp.execute').auto_open_preview()"
+  vim.api.nvim_command "autocmd QuitPre <buffer> lua require('user.lsp.execute').close_lsp_finder_window()"
 
   for i = 0, self.uri, 1 do
     vim.api.nvim_buf_add_highlight(self.contents_buf or 0, -1, 'TargetFileName', i, 0, -1)
@@ -185,13 +185,13 @@ function Finder:apply_float_map()
   local map = vim.api.nvim_buf_set_keymap
 
   for _, mode in ipairs { 'o', '<cr>' } do
-    map(self.bufnr, 'n', mode, ":lua require'lsp.user.execute'.open_link(1)<CR>", lhs)
+    map(self.bufnr, 'n', mode, ":lua require'user.lsp.execute'.open_link(1)<CR>", lhs)
   end
-  map(self.bufnr, 'n', 's', ":lua require'lsp.user.execute'.open_link(2)<CR>", lhs)
-  map(self.bufnr, 'n', 'i', ":lua require'lsp.user.execute'.open_link(3)<CR>", lhs)
+  map(self.bufnr, 'n', 's', ":lua require'user.lsp.execute'.open_link(2)<CR>", lhs)
+  map(self.bufnr, 'n', 'i', ":lua require'user.lsp.execute'.open_link(3)<CR>", lhs)
 
   for _, mode in ipairs { 'q', '<esc>' } do
-    map(self.bufnr, 'n', mode, ":lua require'lsp.user.execute'.close_lsp_finder_window()<CR>", lhs)
+    map(self.bufnr, 'n', mode, ":lua require'user.lsp.execute'.close_lsp_finder_window()<CR>", lhs)
   end
 end
 

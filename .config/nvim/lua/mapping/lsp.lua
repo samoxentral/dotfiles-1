@@ -3,13 +3,13 @@ return {
   {
     'gd',
     function()
-      require('lsp.user.execute').execute 'textDocument/definition'
+      require('user.lsp.execute').execute 'textDocument/definition'
     end,
   },
   {
     'gr',
     function()
-      require('lsp.user.execute').execute 'textDocument/references'
+      require('user.lsp.execute').execute 'textDocument/references'
     end,
   },
   { 'gi', vim.lsp.buf.implementation },

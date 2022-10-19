@@ -3,6 +3,8 @@ if not status then
   return
 end
 
+require('utils.loader').highlight 'packer'
+
 vim.cmd 'packadd packer.nvim'
 
 packer.init {

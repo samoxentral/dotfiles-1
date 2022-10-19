@@ -126,3 +126,5 @@ cmp.setup {
     { name = 'path' },
   },
 }
+
+require('utils.loader').highlight 'cmp'

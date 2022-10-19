@@ -31,3 +31,5 @@ require('mason-lspconfig').setup {
     'dockerls',
   },
 }
+
+require('utils.loader').highlight 'mason'
