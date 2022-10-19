@@ -14,7 +14,7 @@ map('n', 'K', vim.lsp.buf.hover, {})
 map('n', '<leader>ls', vim.lsp.buf.signature_help, {})
 map('n', '<leader>D', vim.lsp.buf.type_definition, {})
 
-map('n', '<space>f', vim.lsp.buf.formatting, {})
+map('n', '<space>f', vim.lsp.buf.format, {})
 map('v', '<space>f', vim.lsp.buf.range_formatting, { noremap = true })
 
 map('n', '<leader>d', vim.diagnostic.open_float, {})
