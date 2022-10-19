@@ -28,6 +28,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 alias ll="exa -l -g --icons"
 alias lla="ll -a"
 
+alias vim="nvim"
+
 export EXA_COLORS="\
 pi=38;5;14:\
 cd=38;5;14:\
