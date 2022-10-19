@@ -34,4 +34,6 @@ return {
       require('user.tab-utils').close_buffer()
     end,
   },
+
+  { '<Leader>gb', require('user.git.blame').blame },
 }

@@ -2,9 +2,11 @@ local nvim_lsp = require 'lspconfig'
 local util = require 'lspconfig/util'
 
 require 'lsp.ui'
+require('utils.loader').mapping 'lsp'
 
 local on_attach = function(client, bufnr)
   require('illuminate').on_attach(client)
+  require('utils.loader').mapping 'lsp'
 end
 
 -- PHP

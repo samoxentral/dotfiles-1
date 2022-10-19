@@ -8,7 +8,12 @@ return function(use)
       require 'plugins.config.gitsigns'
     end,
   }
-  use 'sindrets/diffview.nvim'
+  use {
+    'sindrets/diffview.nvim',
+    config = function()
+      require('utils.loader').mapping 'diffview'
+    end,
+  }
 
   -- other
   use {
@@ -37,7 +42,7 @@ return function(use)
   use {
     'numToStr/Comment.nvim',
     config = function()
-      require('Comment').setup {}
+      require 'plugins.config.comment'
     end,
   }
 

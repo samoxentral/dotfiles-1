@@ -121,3 +121,5 @@ require('nvim-tree').setup {
     },
   },
 }
+
+require('utils.loader').mapping 'nvimtree'

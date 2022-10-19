@@ -50,3 +50,5 @@ require('telescope').setup {
 
   extensions_list = { 'dap' },
 }
+
+require('utils.loader').mapping 'telescope'
