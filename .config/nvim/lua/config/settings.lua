@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
--- opt.spelllang = { 'en_us' }
+opt.spelllang = { 'en_us' }
 -- opt.spell = true
 
 opt.scrolloff = 15
@@ -16,6 +16,7 @@ opt.showmode = false
 opt.title = true
 opt.clipboard = 'unnamedplus'
 opt.cul = true -- cursor line
+opt.mouse = ''
 
 -- Indenting
 opt.expandtab = true

@@ -1,33 +1,34 @@
-local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
--- nvim cmp
-set_hl(0, 'CmpItemAbbr', { fg = colors.base05 })
-set_hl(0, 'CmpItemAbbrMatch', { fg = colors.base0D, bold = true })
-set_hl(0, 'CmpBorder', { fg = colors.base02 })
-set_hl(0, 'CmpDocBorder', { fg = colors.base00_X, bg = colors.base00_X })
-set_hl(0, 'CmPmenu', { bg = colors.base00_X })
+return {
+  -- nvim cmp
+  { 'CmpItemAbbr', { fg = colors.base05 } },
+  { 'CmpItemAbbrMatch', { fg = colors.base0D, bold = true } },
+  { 'CmpBorder', { fg = colors.base02 } },
+  { 'CmpDocBorder', { fg = colors.base00_X, bg = colors.base00_X } },
+  { 'CmPmenu', { bg = colors.base00_X } },
 
--- cmp item kinds
-set_hl(0, 'CmpItemKindConstant', { fg = colors.base09 })
-set_hl(0, 'CmpItemKindFunction', { fg = colors.base0D })
-set_hl(0, 'CmpItemKindIdentifier', { fg = colors.base08 })
-set_hl(0, 'CmpItemKindField', { fg = colors.base08 })
-set_hl(0, 'CmpItemKindVariable', { fg = colors.base0E })
-set_hl(0, 'CmpItemKindSnippet', { fg = colors.base0F })
-set_hl(0, 'CmpItemKindText', { fg = colors.base0B })
-set_hl(0, 'CmpItemKindStructure', { fg = colors.base0E })
-set_hl(0, 'CmpItemKindType', { fg = colors.base0A })
-set_hl(0, 'CmpItemKindKeyword', { fg = colors.base07 })
-set_hl(0, 'CmpItemKindMethod', { fg = colors.base0D })
-set_hl(0, 'CmpItemKindConstructor', { fg = colors.base0D })
-set_hl(0, 'CmpItemKindFolder', { fg = colors.base07 })
-set_hl(0, 'CmpItemKindModule', { fg = colors.base0A })
-set_hl(0, 'CmpItemKindProperty', { fg = colors.base08 })
-set_hl(0, 'CmpItemKindUnit', { fg = colors.base0E })
-set_hl(0, 'CmpItemKindFil', { fg = colors.base07 })
-set_hl(0, 'CmpItemKindColo', { fg = colors.base0F })
-set_hl(0, 'CmpItemKindReferenc', { fg = colors.base05 })
-set_hl(0, 'CmpItemKindStruc', { fg = colors.base0E })
-set_hl(0, 'CmpItemKindOperato', { fg = colors.base05 })
-set_hl(0, 'CmpItemKindTypeParamete', { fg = colors.base08 })
+  -- cmp item kinds
+  { 'CmpItemKindConstant', { fg = colors.base09 } },
+  { 'CmpItemKindFunction', { fg = colors.base0D } },
+  { 'CmpItemKindIdentifier', { fg = colors.base08 } },
+  { 'CmpItemKindField', { fg = colors.base08 } },
+  { 'CmpItemKindVariable', { fg = colors.base0E } },
+  { 'CmpItemKindSnippet', { fg = colors.base0F } },
+  { 'CmpItemKindText', { fg = colors.base0B } },
+  { 'CmpItemKindStructure', { fg = colors.base0E } },
+  { 'CmpItemKindType', { fg = colors.base0A } },
+  { 'CmpItemKindKeyword', { fg = colors.base07 } },
+  { 'CmpItemKindMethod', { fg = colors.base0D } },
+  { 'CmpItemKindConstructor', { fg = colors.base0D } },
+  { 'CmpItemKindFolder', { fg = colors.base07 } },
+  { 'CmpItemKindModule', { fg = colors.base0A } },
+  { 'CmpItemKindProperty', { fg = colors.base08 } },
+  { 'CmpItemKindUnit', { fg = colors.base0E } },
+  { 'CmpItemKindFil', { fg = colors.base07 } },
+  { 'CmpItemKindColo', { fg = colors.base0F } },
+  { 'CmpItemKindReferenc', { fg = colors.base05 } },
+  { 'CmpItemKindStruc', { fg = colors.base0E } },
+  { 'CmpItemKindOperato', { fg = colors.base05 } },
+  { 'CmpItemKindTypeParamete', { fg = colors.base08 } },
+}

@@ -1,4 +1,3 @@
-local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
 local icon_colors = {
@@ -9,31 +8,33 @@ local icon_colors = {
   teal = '#519ABA',
 }
 
-set_hl(0, 'DevIconDefault', { fg = colors.base0F })
-set_hl(0, 'DevIconc', { fg = colors.base0D })
-set_hl(0, 'DevIconcss', { fg = icon_colors.blue })
-set_hl(0, 'DevIcondeb', { fg = icon_colors.cyan })
-set_hl(0, 'DevIconDockerfile', { fg = icon_colors.cyan })
-set_hl(0, 'DevIconhtml', { fg = colors.base08 })
-set_hl(0, 'DevIconjpeg', { fg = colors.base0E })
-set_hl(0, 'DevIconjpg', { fg = colors.base0E })
-set_hl(0, 'DevIconjs', { fg = colors.base0A })
-set_hl(0, 'DevIconkt', { fg = colors.base08 })
-set_hl(0, 'DevIconlock', { fg = colors.base0F })
-set_hl(0, 'DevIconlua', { fg = icon_colors.blue })
-set_hl(0, 'DevIconmp3', { fg = colors.base05 })
-set_hl(0, 'DevIconmp4', { fg = colors.base05 })
-set_hl(0, 'DevIconout', { fg = colors.base05 })
-set_hl(0, 'DevIconpng', { fg = colors.base0E })
-set_hl(0, 'DevIconpy', { fg = icon_colors.cyan })
-set_hl(0, 'DevIcontoml', { fg = icon_colors.blue })
-set_hl(0, 'DevIconts', { fg = icon_colors.teal })
-set_hl(0, 'DevIconttf', { fg = colors.base05 })
-set_hl(0, 'DevIconrb', { fg = icon_colors.pink })
-set_hl(0, 'DevIconrpm', { fg = colors.base08 })
-set_hl(0, 'DevIconvue', { fg = icon_colors.vibrant_green })
-set_hl(0, 'DevIconwoff', { fg = colors.base05 })
-set_hl(0, 'DevIconwoff2', { fg = colors.base05 })
-set_hl(0, 'DevIconxz', { fg = colors.base0A })
-set_hl(0, 'DevIconzip', { fg = colors.base0A })
-set_hl(0, 'DevIconZig', { fg = colors.base08 })
+return {
+  { 'DevIconDefault', { fg = colors.base0F } },
+  { 'DevIconc', { fg = colors.base0D } },
+  { 'DevIconcss', { fg = icon_colors.blue } },
+  { 'DevIcondeb', { fg = icon_colors.cyan } },
+  { 'DevIconDockerfile', { fg = icon_colors.cyan } },
+  { 'DevIconhtml', { fg = colors.base08 } },
+  { 'DevIconjpeg', { fg = colors.base0E } },
+  { 'DevIconjpg', { fg = colors.base0E } },
+  { 'DevIconjs', { fg = colors.base0A } },
+  { 'DevIconkt', { fg = colors.base08 } },
+  { 'DevIconlock', { fg = colors.base0F } },
+  { 'DevIconlua', { fg = icon_colors.blue } },
+  { 'DevIconmp3', { fg = colors.base05 } },
+  { 'DevIconmp4', { fg = colors.base05 } },
+  { 'DevIconout', { fg = colors.base05 } },
+  { 'DevIconpng', { fg = colors.base0E } },
+  { 'DevIconpy', { fg = icon_colors.cyan } },
+  { 'DevIcontoml', { fg = icon_colors.blue } },
+  { 'DevIconts', { fg = icon_colors.teal } },
+  { 'DevIconttf', { fg = colors.base05 } },
+  { 'DevIconrb', { fg = icon_colors.pink } },
+  { 'DevIconrpm', { fg = colors.base08 } },
+  { 'DevIconvue', { fg = icon_colors.vibrant_green } },
+  { 'DevIconwoff', { fg = colors.base05 } },
+  { 'DevIconwoff2', { fg = colors.base05 } },
+  { 'DevIconxz', { fg = colors.base0A } },
+  { 'DevIconzip', { fg = colors.base0A } },
+  { 'DevIconZig', { fg = colors.base08 } },
+}

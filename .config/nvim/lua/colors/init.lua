@@ -1,16 +1,26 @@
-require 'colors.alpha'
-require 'colors.cmp'
-require 'colors.dap'
-require 'colors.devicons'
-require 'colors.general'
-require 'colors.git'
-require 'colors.illuminate'
-require 'colors.indentline'
-require 'colors.lspsaga'
-require 'colors.mason'
-require 'colors.nvimtree'
-require 'colors.packer'
-require 'colors.statusline'
-require 'colors.tabline'
-require 'colors.telescope'
-require 'colors.treesitter.init'
+local modules = {
+  'alpha',
+  'cmp',
+  'dap',
+  'devicons',
+  'general',
+  'git',
+  'illuminate',
+  'indentline',
+  'lsp',
+  'lspsaga',
+  'mason',
+  'nvimtree',
+  'packer',
+  'statusline',
+  'tabline',
+  'telescope',
+  'treesitter.init',
+}
+
+for _, module in pairs(modules) do
+  local groups = require('colors.' .. module)
+  for _, data in pairs(groups) do
+    vim.api.nvim_set_hl(0, data[1], data[2])
+  end
+end

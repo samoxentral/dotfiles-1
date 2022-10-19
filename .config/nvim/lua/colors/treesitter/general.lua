@@ -1,74 +1,75 @@
-local set_hl = vim.api.nvim_set_hl
 local colors = require 'colors.colors'
 
-set_hl(0, '@annotation', { fg = colors.base0F })
-set_hl(0, '@attribute', { fg = colors.base0A })
-set_hl(0, '@character', { fg = colors.base08 })
-set_hl(0, '@constant.builtin', { fg = colors.base09 })
-set_hl(0, '@constant.macro', { fg = colors.base08 })
-set_hl(0, '@error', { fg = colors.base08 })
-set_hl(0, '@exception', { fg = colors.base08, italic = true })
-set_hl(0, '@float', { fg = colors.base08 })
-set_hl(0, '@keyword.function', { fg = colors.base0E, italic = true })
-set_hl(0, '@keyword.return', { fg = colors.base0E, italic = true })
-set_hl(0, '@function.builtin', { fg = colors.base0D })
-set_hl(0, '@function.macro', { fg = colors.base08 })
-set_hl(0, '@keyword.operator', { fg = colors.base0E, italic = true })
-set_hl(0, '@method', { fg = colors.base0D })
-set_hl(0, '@namespace', { fg = colors.base07 })
-set_hl(0, '@none', { fg = colors.base05 })
-set_hl(0, '@parameter', { fg = colors.base08 })
-set_hl(0, '@parameter.reference', { fg = colors.base05 })
-set_hl(0, '@punctuation.bracket', { fg = colors.base0C })
-set_hl(0, '@punctuation.delimiter', { fg = colors.base0C })
-set_hl(0, '@punctuation.special', { fg = colors.base08 })
-set_hl(0, '@string.regex', { fg = colors.base0C })
-set_hl(0, '@string.escape', { fg = colors.base0C })
-set_hl(0, '@symbol', { fg = colors.base0B })
-set_hl(0, '@tag.delimiter', { fg = colors.base0F })
-set_hl(0, '@text', { fg = colors.base05 })
-set_hl(0, '@text.strong', { bold = true })
-set_hl(0, '@text.emphasis', { fg = colors.base09 })
-set_hl(0, '@text.strike', { fg = colors.base00, strikethrough = true })
-set_hl(0, '@text.literal', { fg = colors.base09 })
-set_hl(0, '@text.uri', { fg = colors.base09, underline = true })
-set_hl(0, '@type.builtin', { fg = colors.base0E, italic = true })
-set_hl(0, '@variable.builtin', { fg = colors.base05 })
-set_hl(0, '@variable', { fg = colors.base05 })
-set_hl(0, '@definition', { sp = colors.base04, underline = true })
-set_hl(0, '@field', { fg = colors.base0D })
-set_hl(0, '@property', { fg = colors.base07 })
-set_hl(0, '@constructor', { fg = colors.base07 })
+return {
+  { '@annotation', { fg = colors.base0F } },
+  { '@attribute', { fg = colors.base0A } },
+  { '@character', { fg = colors.base08 } },
+  { '@constant.builtin', { fg = colors.base09 } },
+  { '@constant.macro', { fg = colors.base08 } },
+  { '@error', { fg = colors.base08 } },
+  { '@exception', { fg = colors.base08, italic = true } },
+  { '@float', { fg = colors.base08 } },
+  { '@keyword.function', { fg = colors.base0E, italic = true } },
+  { '@keyword.return', { fg = colors.base0E, italic = true } },
+  { '@function.builtin', { fg = colors.base0D } },
+  { '@function.macro', { fg = colors.base08 } },
+  { '@keyword.operator', { fg = colors.base0E, italic = true } },
+  { '@method', { fg = colors.base0D } },
+  { '@namespace', { fg = colors.base07 } },
+  { '@none', { fg = colors.base05 } },
+  { '@parameter', { fg = colors.base08 } },
+  { '@parameter.reference', { fg = colors.base05 } },
+  { '@punctuation.bracket', { fg = colors.base0C } },
+  { '@punctuation.delimiter', { fg = colors.base0C } },
+  { '@punctuation.special', { fg = colors.base08 } },
+  { '@string.regex', { fg = colors.base0C } },
+  { '@string.escape', { fg = colors.base0C } },
+  { '@symbol', { fg = colors.base0B } },
+  { '@tag.delimiter', { fg = colors.base0F } },
+  { '@text', { fg = colors.base05 } },
+  { '@text.strong', { bold = true } },
+  { '@text.emphasis', { fg = colors.base09 } },
+  { '@text.strike', { fg = colors.base00, strikethrough = true } },
+  { '@text.literal', { fg = colors.base09 } },
+  { '@text.uri', { fg = colors.base09, underline = true } },
+  { '@type.builtin', { fg = colors.base0E, italic = true } },
+  { '@variable.builtin', { fg = colors.base05 } },
+  { '@variable', { fg = colors.base05 } },
+  { '@definition', { sp = colors.base04, underline = true } },
+  { '@field', { fg = colors.base0D } },
+  { '@property', { fg = colors.base07 } },
+  { '@constructor', { fg = colors.base07 } },
 
-set_hl(0, 'Boolean', { fg = colors.base08, italic = true })
-set_hl(0, 'Character', { fg = colors.base08 })
-set_hl(0, 'Conditional', { fg = colors.base0E })
-set_hl(0, 'Constant', { fg = colors.base08 })
-set_hl(0, 'Define', { fg = colors.base0E })
-set_hl(0, 'Delimiter', { fg = colors.base0F })
-set_hl(0, 'Float', { fg = colors.base08 })
-set_hl(0, 'Variable', { fg = colors.base05 })
-set_hl(0, 'Function', { fg = colors.base0D })
-set_hl(0, 'Identifier', { fg = colors.base08 })
-set_hl(0, 'Include', { fg = colors.base0E, italic = true })
-set_hl(0, 'Keyword', { fg = colors.base0E, italic = true })
-set_hl(0, 'Label', { fg = colors.base08 })
-set_hl(0, 'Number', { fg = colors.base08 })
-set_hl(0, 'Operator', { fg = colors.base0C })
-set_hl(0, 'PreProc', { fg = colors.base0A })
-set_hl(0, 'Repeat', { fg = colors.base0E, italic = true })
-set_hl(0, 'Special', { fg = colors.base0C })
-set_hl(0, 'SpecialChar', { fg = colors.base0F })
-set_hl(0, 'Statement', { fg = colors.base08 })
-set_hl(0, 'StorageClass', { fg = colors.base0A })
-set_hl(0, 'String', { fg = colors.base0B })
-set_hl(0, 'Structure', { fg = colors.base0E })
-set_hl(0, 'Tag', { fg = colors.base0A })
-set_hl(0, 'Todo', { fg = colors.base0A, bg = colors.base01 })
-set_hl(0, 'Type', { fg = colors.base07 })
-set_hl(0, 'Typedef', { fg = colors.base0A })
+  { 'Boolean', { fg = colors.base08, italic = true } },
+  { 'Character', { fg = colors.base08 } },
+  { 'Conditional', { fg = colors.base0E } },
+  { 'Constant', { fg = colors.base08 } },
+  { 'Define', { fg = colors.base0E } },
+  { 'Delimiter', { fg = colors.base0F } },
+  { 'Float', { fg = colors.base08 } },
+  { 'Variable', { fg = colors.base05 } },
+  { 'Function', { fg = colors.base0D } },
+  { 'Identifier', { fg = colors.base08 } },
+  { 'Include', { fg = colors.base0E, italic = true } },
+  { 'Keyword', { fg = colors.base0E, italic = true } },
+  { 'Label', { fg = colors.base08 } },
+  { 'Number', { fg = colors.base08 } },
+  { 'Operator', { fg = colors.base0C } },
+  { 'PreProc', { fg = colors.base0A } },
+  { 'Repeat', { fg = colors.base0E, italic = true } },
+  { 'Special', { fg = colors.base0C } },
+  { 'SpecialChar', { fg = colors.base0F } },
+  { 'Statement', { fg = colors.base08 } },
+  { 'StorageClass', { fg = colors.base0A } },
+  { 'String', { fg = colors.base0B } },
+  { 'Structure', { fg = colors.base0E } },
+  { 'Tag', { fg = colors.base0A } },
+  { 'Todo', { fg = colors.base0A, bg = colors.base01 } },
+  { 'Type', { fg = colors.base07 } },
+  { 'Typedef', { fg = colors.base0A } },
 
-set_hl(0, '@class_declaration', { fg = colors.base0B })
-set_hl(0, '@interface_declaration', { fg = '#78ccf0' })
-set_hl(0, '@function_call', { fg = colors.base0B })
-set_hl(0, '@attribute_parameter', { fg = '#467cda' })
+  { '@class_declaration', { fg = colors.base0B } },
+  { '@interface_declaration', { fg = '#78ccf0' } },
+  { '@function_call', { fg = colors.base0B } },
+  { '@attribute_parameter', { fg = '#467cda' } },
+}
