@@ -35,7 +35,7 @@ packer.startup(function(use)
   use 'uga-rosa/ccc.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'
-  -- use 'rmagatti/auto-session'
+  use 'rmagatti/auto-session'
   use 'karb94/neoscroll.nvim'
 
   -- tree

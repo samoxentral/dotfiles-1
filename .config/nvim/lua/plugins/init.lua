@@ -1,5 +1,5 @@
 require 'plugins.alpha'
--- require 'plugins.auto-session'
+require 'plugins.auto-session'
 require 'plugins.autopairs'
 require 'plugins.ccc'
 require 'plugins.comment'
