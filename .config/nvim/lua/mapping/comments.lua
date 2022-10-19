@@ -1,6 +1,6 @@
 local status, comment = pcall(require, 'Comment.api')
 if not status then
-  return
+  return {}
 end
 
 return {
