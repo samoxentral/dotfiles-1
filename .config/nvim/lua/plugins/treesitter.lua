@@ -39,6 +39,6 @@ for _, name in pairs(override) do
   content = f:read '*all'
   f:close()
   -- if require('vim.treesitter.query').get_query(name, 'highlight') then
-    require('vim.treesitter.query').set_query(name, 'highlights', content)
+  require('vim.treesitter.query').set_query(name, 'highlights', content)
   -- end
 end
