@@ -1,35 +1,37 @@
-local map = vim.keymap.set
-local default_opts = { noremap = true, silent = true }
+return {
+  { '<ESC>', ':noh <cr>' },
+  { '<C-s>', ':w <cr>' },
 
-map('n', '<ESC>', ':noh <cr>', default_opts)
-map('n', '<C-s>', ':w <cr>', default_opts)
+  -- Disable arrows
+  { '<up>', '', '' },
+  { '<down>', '', '' },
+  { '<left>', '', '' },
+  { '<right>', '', '' },
 
--- Disable arrows
-map('', '<up>', ':echoe "Use k"<CR>', { noremap = true, silent = false })
-map('', '<down>', ':echoe "Use j"<CR>', { noremap = true, silent = false })
-map('', '<left>', ':echoe "Use h"<CR>', { noremap = true, silent = false })
-map('', '<right>', ':echoe "Use l"<CR>', { noremap = true, silent = false })
+  -- navigation
+  { '<C-b>', '<ESC>^i', 'i' },
+  { '<C-e>', '<End>', 'i' },
 
--- navigation
-map('i', '<C-b>', '<ESC>^i', default_opts)
-map('i', '<C-e>', '<End>', default_opts)
+  { '<C-h>', '<C-w>h', 'i' },
+  { '<C-k>', '<C-w>k', 'i' },
+  { '<C-j>', '<C-w>j', 'i' },
+  { '<C-l>', '<C-w>l', 'i' },
 
-map('i', '<C-h>', '<C-w>h', default_opts)
-map('i', '<C-k>', '<C-w>k', default_opts)
-map('i', '<C-j>', '<C-w>j', default_opts)
-map('i', '<C-l>', '<C-w>l', default_opts)
+  { '<C-h>', '<C-w>h' },
+  { '<C-k>', '<C-w>k' },
+  { '<C-j>', '<C-w>j' },
+  { '<C-l>', '<C-w>l' },
 
-map('n', '<C-h>', '<C-w>h', default_opts)
-map('n', '<C-k>', '<C-w>k', default_opts)
-map('n', '<C-j>', '<C-w>j', default_opts)
-map('n', '<C-l>', '<C-w>l', default_opts)
+  -- buffers
+  { '<S-b>', ':enew<cr>' },
+  { '<Tab>', ':Tbufnext <cr>' },
+  { '<S-Tab>', ':Tbufprev <cr>' },
 
--- buffers
-map('n', '<S-b>', ':enew<cr>', default_opts)
-map('n', '<Tab>', ':Tbufnext <cr>', default_opts)
-map('n', '<S-Tab>', ':Tbufprev <cr>', default_opts)
-
-map('n', 'tn', ':tabedit <cr>', default_opts)
-map('n', '<leader>x', function()
-  require('user.tab-utils').close_buffer()
-end, default_opts)
+  { 'tn', ':tabedit <cr>' },
+  {
+    '<leader>x',
+    function()
+      require('user.tab-utils').close_buffer()
+    end,
+  },
+}

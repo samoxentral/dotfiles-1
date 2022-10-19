@@ -1,33 +1,41 @@
-local map = vim.keymap.set
-local default_opts = { noremap = true, silent = true }
-
 local status, builtin = pcall(require, 'telescope.builtin')
 
 if not status then
-  return
+  return {}
 end
 
 local dap = require('telescope').extensions.dap
 local execute = require 'user.finder'
 
-map('n', '<leader>ff', function()
-  execute(builtin.find_files)
-end, default_opts)
+return {
+  {
+    '<leader>ff',
+    function()
+      execute(builtin.find_files)
+    end,
+  },
 
-map('n', '<leader>fa', function()
-  builtin.find_files { follow = true, no_ignore = true, hidden = true }
-end, default_opts)
+  {
+    '<leader>fa',
+    function()
+      builtin.find_files { follow = true, no_ignore = true, hidden = true }
+    end,
+  },
 
-map('n', '<leader>fw', function()
-  execute(builtin.live_grep)
-end, default_opts)
+  {
+    '<leader>fw',
+    function()
+      execute(builtin.live_grep)
+    end,
+  },
 
-map('n', '<leader>fb', builtin.buffers, default_opts)
-map('n', '<leader>fh', builtin.help_tags, default_opts)
-map('n', '<leader>fo', builtin.oldfiles, default_opts)
-map('n', '<leader>tk', builtin.keymaps, default_opts)
+  { '<leader>fb', builtin.buffers },
+  { '<leader>fh', builtin.help_tags },
+  { '<leader>fo', builtin.oldfiles },
+  { '<leader>tk', builtin.keymaps },
 
-map('n', '<leader>cm', builtin.git_commits, default_opts)
-map('n', '<leader>gt', builtin.git_status, default_opts)
+  { '<leader>cm', builtin.git_commits },
+  { '<leader>gt', builtin.git_status },
 
-map('n', '<leader>dd', dap.list_breakpoints)
+  { '<leader>dd', dap.list_breakpoints },
+}
