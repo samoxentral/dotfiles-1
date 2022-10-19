@@ -1,14 +1,14 @@
 local colors = require 'colors.colors'
 
-local function lspSymbol(name, link, icon)
+local function createSymbol(name, link, icon)
   vim.fn.sign_define(name, { text = icon, texthl = link, linehl = link, numhl = link })
 end
 
-lspSymbol('DapBreakpoint', 'DapBreakpoint', '')
-lspSymbol('DapBreakpointCondition', 'DapBreakpoint', 'ﳁ')
-lspSymbol('DapBreakpointRejected', 'DapBreakpoint', '')
-lspSymbol('DapLogPoint', 'DapLogPoint', '')
-lspSymbol('DapStopped', 'DapStopped', '')
+createSymbol('DapBreakpoint', 'DapBreakpoint', '')
+createSymbol('DapBreakpointCondition', 'DapBreakpoint', 'ﳁ')
+createSymbol('DapBreakpointRejected', 'DapBreakpoint', '')
+createSymbol('DapLogPoint', 'DapLogPoint', '')
+createSymbol('DapStopped', 'DapStopped', '')
 
 return {
   { 'DapBreakpoint', { fg = colors.base08, bg = colors.base02 } },
