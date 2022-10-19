@@ -1,9 +1,4 @@
-local status, neoscroll = pcall(require, 'neoscroll')
-if not status then
-  return
-end
-
-neoscroll.setup {
+require('neoscroll').setup {
   easing_function = 'quadratic',
 }
 

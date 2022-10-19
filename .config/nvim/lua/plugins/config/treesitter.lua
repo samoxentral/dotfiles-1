@@ -1,9 +1,4 @@
-local status, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
-if not status then
-  return
-end
-
-nvim_treesitter.setup {
+require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
     use_languagetree = true,
