@@ -6,7 +6,7 @@
   },
   "doc_function": {
     "prefix": "/**",
-    "body": ["/**", " * ${1}", " **/"],
+    "body": ["/**", " * ${1}", " */"],
     "description": "Function documentation"
   },
   "getter_setter": {

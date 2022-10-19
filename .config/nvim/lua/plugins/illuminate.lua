@@ -1,5 +1,27 @@
-vim.g.Illuminate_ftblacklist = { 'NvimTree', 'alpha', 'git.nvim' }
+local status, illuminate = pcall(require, 'illuminate')
+if not status then
+  return
+end
 
-vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
+illuminate.configure {
+  providers = {
+    'lsp',
+    'treesitter',
+    'regex',
+  },
+  filetype_overrides = {},
+  filetypes_denylist = {
+    'NvimTree',
+    'alpha',
+    'git.nvim',
+    'TelescopePrompt',
+  },
+  filetypes_allowlist = {},
+  modes_denylist = {},
+  modes_allowlist = {},
+  providers_regex_syntax_denylist = {},
+  providers_regex_syntax_allowlist = {},
+  under_cursor = true,
+  large_file_cutoff = nil,
+  large_file_overrides = nil,
+}
