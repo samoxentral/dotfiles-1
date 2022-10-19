@@ -37,45 +37,50 @@ packer.startup(function(use)
   use 'numToStr/Comment.nvim'
   use 'rmagatti/auto-session'
   use 'karb94/neoscroll.nvim'
-
-  -- tree
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-
-  -- treesitter
-  use 'nvim-treesitter/nvim-treesitter'
-  use 'nvim-treesitter/playground'
   use 'mtdl9/vim-log-highlighting'
 
-  -- telescope
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-telescope/telescope-dap.nvim'
+  use { 'kyazdani42/nvim-tree.lua', requires = {
+    'kyazdani42/nvim-web-devicons',
+  } }
 
-  -- lsp
-  use 'neovim/nvim-lspconfig'
+  use { 'nvim-treesitter/nvim-treesitter', requires = {
+    'nvim-treesitter/playground',
+  } }
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-lua/popup.nvim',
+      'nvim-telescope/telescope-dap.nvim',
+    },
+  }
+
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {
+      'RRethy/vim-illuminate',
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+    },
+  }
 
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
 
-  -- snippets
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip'
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lua',
+      'saadparwaiz1/cmp_luasnip',
+      'L3MON4D3/LuaSnip',
+    },
+  }
 
-  -- lsp completion
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-nvim-lua'
-
-  -- hightlight lsp word
-  use 'RRethy/vim-illuminate'
-
-  -- dap
-  use 'mfussenegger/nvim-dap'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'rcarriga/nvim-dap-ui'
+  use { 'mfussenegger/nvim-dap', requires = {
+    'theHamsta/nvim-dap-virtual-text',
+    'rcarriga/nvim-dap-ui',
+  } }
 end)

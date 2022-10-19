@@ -1,9 +1,9 @@
-local cmp_status, cmp = pcall(require, 'cmp')
-local luasnip_status, luasnip = pcall(require, 'luasnip')
-if not cmp_status or not luasnip_status then
+local status, cmp = pcall(require, 'cmp')
+if not status then
   return
 end
 
+local luasnip = require 'luasnip'
 vim.o.completeopt = 'menu,menuone,noselect'
 
 local function border(hl_name)

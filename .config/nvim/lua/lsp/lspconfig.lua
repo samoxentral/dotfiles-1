@@ -1,12 +1,11 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
-local illuminate_status, illuminate = pcall(require, 'illuminate')
-if not status or not illuminate_status then
+if not status then
   return
 end
 local util = require 'lspconfig/util'
 
 local on_attach = function(client, bufnr)
-  illuminate.on_attach(client)
+  require('illuminate').on_attach(client)
 end
 
 -- PHP

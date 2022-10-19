@@ -1,6 +1,5 @@
-local mason_status, mason = pcall(require, 'mason')
-local mason_config_status, mason_config = pcall(require, 'mason-lspconfig')
-if not mason_status or not mason_config_status then
+local status, mason = pcall(require, 'mason')
+if not status then
   return
 end
 
@@ -27,7 +26,7 @@ mason.setup {
   max_concurrent_installers = 10,
 }
 
-mason_config.setup {
+require('mason-lspconfig').setup {
   ensure_installed = {
     'intelephense',
     'tsserver',

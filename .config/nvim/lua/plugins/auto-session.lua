@@ -1,5 +1,5 @@
 local status, auto_session = pcall(require, 'auto-session')
-if status then
+if not status then
   return
 end
 

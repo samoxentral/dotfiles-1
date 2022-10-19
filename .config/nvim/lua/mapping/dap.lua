@@ -1,9 +1,9 @@
-local status_dap, dap = pcall(require, 'dap')
-local status_dapui, dapui = pcall(require, 'dapui')
-if not status_dap or not status_dapui then
+local status, dap = pcall(require, 'dap')
+if not status then
   return
 end
 
+local dapui = require 'dapui'
 local map = vim.keymap.set
 
 map('n', '<F4>', dapui.toggle)
