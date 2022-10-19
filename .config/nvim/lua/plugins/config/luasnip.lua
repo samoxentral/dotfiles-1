@@ -1,7 +1,4 @@
-local status, luasnip = pcall(require, 'luasnip')
-if not status then
-  return
-end
+local luasnip = require 'luasnip'
 
 luasnip.config.set_config {
   history = true,

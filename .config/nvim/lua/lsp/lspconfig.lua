@@ -1,8 +1,7 @@
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if not status then
-  return
-end
+local nvim_lsp = require 'lspconfig'
 local util = require 'lspconfig/util'
+
+require 'lsp.ui'
 
 local on_attach = function(client, bufnr)
   require('illuminate').on_attach(client)

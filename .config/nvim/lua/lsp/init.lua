@@ -1,6 +1,0 @@
-require 'lsp.cmp'
-require 'lsp.lspconfig'
-require 'lsp.luasnip'
-require 'lsp.mason'
-require 'lsp.null-ls'
-require 'lsp.ui'

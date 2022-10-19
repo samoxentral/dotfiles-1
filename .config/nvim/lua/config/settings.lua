@@ -6,6 +6,7 @@ opt.spelllang = { 'en_us' }
 
 opt.scrolloff = 15
 
+opt.completeopt = 'menu,menuone,noselect'
 opt.laststatus = 3 -- global statusline
 opt.statusline = "%!v:lua.require('user.statusline').run()"
 

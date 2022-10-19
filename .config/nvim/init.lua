@@ -1,5 +1,4 @@
 require 'plugins.init'
 require 'config.init'
 require 'mapping.init'
-require 'lsp.init'
 require 'colors.init'

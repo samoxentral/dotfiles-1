@@ -1,7 +1,4 @@
-local status, null_ls = pcall(require, 'null-ls')
-if not status then
-  return
-end
+local null_ls = require 'null-ls'
 
 null_ls.setup {
   sources = {

@@ -1,10 +1,6 @@
-local status, cmp = pcall(require, 'cmp')
-if not status then
-  return
-end
-
+local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-vim.o.completeopt = 'menu,menuone,noselect'
+local cmp_window = require 'cmp.utils.window'
 
 local function border(hl_name)
   return {
@@ -18,8 +14,6 @@ local function border(hl_name)
     { '│', hl_name },
   }
 end
-
-local cmp_window = require 'cmp.utils.window'
 
 cmp_window.info_ = cmp_window.info
 cmp_window.info = function(self)

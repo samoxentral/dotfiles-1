@@ -102,10 +102,17 @@ return function(use)
     },
     config = function()
       require 'plugins.config.illuminate'
+      require 'lsp.mason'
+      require 'lsp.lspconfig'
     end,
   }
 
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require 'lsp.null-ls'
+    end,
+  }
 
   use {
     'hrsh7th/nvim-cmp',
@@ -117,6 +124,10 @@ return function(use)
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
     },
+    config = function()
+      require 'plugins.config.cmp'
+      require 'plugins.config.luasnip'
+    end,
   }
 
   use {

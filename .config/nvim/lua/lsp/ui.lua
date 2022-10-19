@@ -1,7 +1,4 @@
-local status, win = pcall(require, 'lspconfig.ui.windows')
-if not status then
-  return
-end
+local win = require 'lspconfig.ui.windows'
 
 vim.diagnostic.config {
   virtual_text = {
