@@ -119,8 +119,14 @@ return function(use)
     },
   }
 
-  use { 'mfussenegger/nvim-dap', requires = {
-    'theHamsta/nvim-dap-virtual-text',
-    'rcarriga/nvim-dap-ui',
-  } }
+  use {
+    'mfussenegger/nvim-dap',
+    requires = {
+      'theHamsta/nvim-dap-virtual-text',
+      'rcarriga/nvim-dap-ui',
+    },
+    config = function()
+      require 'debug.init'
+    end,
+  }
 end

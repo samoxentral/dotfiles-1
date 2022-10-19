@@ -1,7 +1,4 @@
-local status, dap = pcall(require, 'dap')
-if not status then
-  return
-end
+local dap = require 'dap'
 
 dap.adapters.php = {
   type = 'executable',
